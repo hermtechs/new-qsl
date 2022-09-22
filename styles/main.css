@@ -276,12 +276,14 @@ padding: 0rem 0rem 2rem 0rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-
+.bigger-post-description{
+    max-width: 600px;
+}
   .top-story-big h3{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .small-posts{
-    /* height: 500px; */
+    /* height: 450px; */
     background: #eee;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -380,4 +382,7 @@ padding: 0rem 0rem 2rem 0rem;
         font-size: 0.85rem;
         line-height: 1.5;
     }
+    .top-story-big h3{
+        font-size: 1.2rem;
+      }
 }
