@@ -223,7 +223,7 @@ padding: 0rem 0rem 2rem 0rem;
 .top-story-big{
     position: relative;
     width: 100%;
-    height:400px;
+    height:450px;
     background: #200518;
     background: url("/images/horse-jumping.jpg"),
                        radial-gradient(#9c9a9a, #340329);
@@ -233,17 +233,17 @@ padding: 0rem 0rem 2rem 0rem;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 11em 1em;
+    padding: 9em 1em;
     border-radius: 0.5rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
 /*END  OF TOP STORY POST */
 
 /* WORLD CUP POST */
-.football .top-story-big{
+.world-cup .top-story-big{
     position: relative;
     width: 100%;
-    height:400px;
+    height:450px;
     background: #200518;
     background: url("/images/worldcup.jpg"),
                        radial-gradient(#9c9a9a, #340329);
@@ -253,7 +253,7 @@ padding: 0rem 0rem 2rem 0rem;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 11em 1em;
+    padding: 9em 1em;
     border-radius: 0.5rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
@@ -261,7 +261,7 @@ padding: 0rem 0rem 2rem 0rem;
 .football .top-story-big{
     position: relative;
     width: 100%;
-    height:400px;
+    height:450px;
     background: #200518;
     background: url("/images/qsl4.jpg"),
                        radial-gradient(#9c9a9a, #340329);
@@ -271,7 +271,7 @@ padding: 0rem 0rem 2rem 0rem;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 11em 1em;
+    padding: 9em 1em;
     border-radius: 0.5rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
