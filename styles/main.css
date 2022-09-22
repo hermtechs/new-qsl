@@ -194,8 +194,24 @@ padding: 0rem 0rem 2rem 0rem;
     color: #fff;
     padding-top: 0.75rem;
 }
-.section-heading{
-    color: #ffff;
+.section-heading-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem 1rem 1rem;
+    align-items: center;
+}
+.section-heading-light{
+    color: #fff;
+}
+.section-heading-wrapper h3{
+    /* border: 2px solid #2313b1; */
+    background: #af1d49;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem ;
+    border-radius: 0.1rem;
+    color: #fff;
+}
+.dark{
+    color: #710e2c;
 }
 .top-story-container{
     padding: 1rem;
@@ -203,6 +219,7 @@ padding: 0rem 0rem 2rem 0rem;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+/* TOP STORY POST */
 .top-story-big{
     position: relative;
     width: 100%;
@@ -216,9 +233,52 @@ padding: 0rem 0rem 2rem 0rem;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 10em 1em;
+    padding: 11em 1em;
     border-radius: 0.5rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+/*END  OF TOP STORY POST */
+
+/* WORLD CUP POST */
+.football .top-story-big{
+    position: relative;
+    width: 100%;
+    height:400px;
+    background: #200518;
+    background: url("/images/worldcup.jpg"),
+                       radial-gradient(#9c9a9a, #340329);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center center;   
+    color: #fff;
+    padding: 11em 1em;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+/* END OF WORLD CUP POST */
+.football .top-story-big{
+    position: relative;
+    width: 100%;
+    height:400px;
+    background: #200518;
+    background: url("/images/qsl4.jpg"),
+                       radial-gradient(#9c9a9a, #340329);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center center;   
+    color: #fff;
+    padding: 11em 1em;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+
+  .top-story-big h3{
+    font-size: 1.5rem;
   }
   .small-posts{
     /* height: 500px; */
@@ -272,7 +332,13 @@ padding: 0rem 0rem 2rem 0rem;
   opacity: 0.8;
   transform: scale(1.05);
 }
-
+.description-txt-small p{
+    margin-bottom: 0.5rem;
+}
+.post-meta-data{
+  /* background: #eed0e8;   */
+  padding: 0.3rem;
+}
 /* SECTION TOP STORIES */
 
 
@@ -295,6 +361,11 @@ padding: 0rem 0rem 2rem 0rem;
         order: 1;
     }
 
+    .section-heading-wrapper{
+        /* justify-content: space-evenly;
+         */
+         margin: 1rem 6rem 1rem 6rem;
+    }
 }
 @media (max-width:1000px){
 .top-story-container{
@@ -306,8 +377,7 @@ padding: 0rem 0rem 2rem 0rem;
         width: 135px;
     }
     .small-post{
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         line-height: 1.5;
     }
-
 }
