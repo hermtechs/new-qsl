@@ -227,12 +227,12 @@ padding: 0rem 0rem 2rem 0rem;
     border-radius: 0.5rem;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
-
   .small-posts .small-post{
     display: flex;
     margin: 1rem 0.1rem 1.5rem 0.1rem;
     gap:1rem;
     height: 90px;
+    max-height: 150px;
     padding: 0rem 0.2rem;
     font-weight: 400;
   }
@@ -272,6 +272,7 @@ padding: 0rem 0rem 2rem 0rem;
   opacity: 0.8;
   transform: scale(1.05);
 }
+
 /* SECTION TOP STORIES */
 
 
@@ -299,4 +300,14 @@ padding: 0rem 0rem 2rem 0rem;
 .top-story-container{
     grid-template-columns: 1fr;
 }
+}
+@media (max-width:500px) {
+    .small-post img{
+        width: 135px;
+    }
+    .small-post{
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
 }
