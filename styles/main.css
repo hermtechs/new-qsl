@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+:root{
+    --clr-primary:#be1c4d;
+    --clr-primary1:#ec4a7b;
+    --clr-secondary:#8a1538;
+    --clr-background:#ff004c;
+    /* --clr-section-gradient:; */
+    --clr-accent:#fd6fff;
+}
+
+html{
+    scroll-behavior: smooth;
+  }
+  img{
+    max-width: 100%;
+  }
+h1,h2,h3,h4,h5,h6{
+
+}
+a{
+  text-decoration: none;
+  /* font-weight: 400;   */
+}
+/* body{
+    background: #8a1538;
+} */
+
+/* NAV STYLES */
+.logo{
+    font-size: 1.2rem;
+    color: var(--clr-primary1);
+    color: #444ed6;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: oblique;
+}
+nav{
+  padding: 1.2rem;
+}
+nav a{
+    /* color: #fff */
+    color: #005ACB;
+    font-weight: 600;
+}
+.nav-small-screen{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+.humburger{
+    background: url("/icons/football-svgrepo-blue.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem;
+}
+
+.humburger span{
+    background: #300ec678;
+    width: 1.9rem;
+    height: 0.2rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}    
+.nav-big-screen{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.big-screen-links>*{
+   margin-left: 1rem; 
+}
+.nav-big-screen .logo{
+    font-size: 1rem
+}
+.social-media>*{
+margin-left: 0.5rem;
+}
+/* NAV STYLES */
+header{
+    /* background: linear-gradient(#9085FF,#fd6fff); */
+    background: linear-gradient(#ffffff , #ee0a4e);
+    height: 60vh;
+    /* border-radius: 0rem 0rem 10rem 10rem; */
+    clip-path: circle(100.2% at 49% 0);
+}
+.news-letter-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(150%);
+    color: #fff;
+    justify-items: center
+}
+.input-wrapper{
+    padding: 1rem;
+}
+.input-wrapper input{
+    outline: none;
+    border: none;
+    padding: 0.5rem 3rem;
+    border-radius: 1.3rem;
+    background: #fff;
+    position: relative;
+}
+.input-wrapper span{
+    background: #005ACB;
+    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+    border-radius: 50%;
+    position: absolute;
+    margin-left:-2.1rem;
+    color: #fff;
+}
+.news-letter-txt{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* SECTION TOP STORIES */
+.section-top-stories{
+ /* width: 500px; */
+
+}
+.header{
+background: #18011a;  /* fallback for old browsers */
+/* background: -webkit-radial-gradient( #6f0000, #d82c66);  */
+ /* Chrome 10-25, Safari 5.1-6 */
+/* background: radial-gradient(#180104, #410c0c);  */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 0rem 0rem 2rem 0rem;
+}
+.quick-links{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+.categories-quick-links{
+    display: flex;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+     
+}/* Hide scrollbar for Chrome, Safari and Opera */
+.categories-quick-links::-webkit-scrollbar {
+    display: none;
+  }
+.categories-quick-links>*{
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0.8rem;
+    margin-right:0.1rem;
+    margin-left:0.1rem ;
+    min-width: 160px;
+    /* height: 30px; */
+    padding-left: 0.5rem;
+    /* padding-bottom: -1rem; */
+    font-size:0.8rem;
+}
+.search-wrapper{
+    order: -1;
+    /* width: 100px; */
+    margin: 1rem;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.search-wrapper input{
+    outline: none;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    border-radius: 1.3rem;
+    background: #29032c;
+    position: relative;
+    border: 2px solid #fff;
+    color: #fff;
+    position: relative;
+}
+.search-wrapper .search-icon{
+    position: absolute;
+    /* margin-left: rem; */
+    /* right:20% ; */
+    margin-right:-12rem;
+    color: #fff;
+    padding-top: 0.75rem;
+}
+.section-heading{
+    color: #ffff;
+}
+.top-story-container{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.top-story-big{
+    position: relative;
+    width: 100%;
+    height:400px;
+    background: #200518;
+    background: url("/images/horse-jumping.jpg"),
+                       radial-gradient(#9c9a9a, #340329);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center center;   
+    color: #fff;
+    padding: 10em 1em;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+  .small-posts{
+    /* height: 500px; */
+    background: #eee;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+
+  .small-posts .small-post{
+    display: flex;
+    margin: 1rem 0.1rem 1.5rem 0.1rem;
+    gap:1rem;
+    height: 90px;
+    padding: 0rem 0.2rem;
+    font-weight: 400;
+  }
+  .small-posts .small-post img{
+    height: 100%;
+    /* width: 100%; */
+    border-radius: 0.4rem;
+  }
+  .description-txt{
+  text-align: center;
+  padding: 0.1rem 1rem;
+}
+.bigger-post-description>*+*{
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+}
+.btn-primary{
+  border: 2px solid #ffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1.2rem;
+  color: #fff;
+
+}
+.read-more-btn{
+  display: inline-block;
+  /* background: #7b0548; */
+  color: #fff;
+  padding: 0.3rem 0.6rem 0.4rem 0.6rem;
+  border-radius: 0.3rem;
+  transition: 250ms ease-in;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.read-more-btn:hover{
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+/* SECTION TOP STORIES */
+
+
+/* MEDIA QUERIES -always keep this at the end of all code */
+/* styles apply as long as screen not bigger than 800px */
+@media (max-width:800px){
+.nav-big-screen{
+    display: none;
+}
+.nav-small-screen{
+    display: flex;
+}
+
+}
+@media (min-width:700px) {
+    .quick-links{
+        grid-template-columns: 2fr 1fr;
+    }
+    .search-wrapper{
+        order: 1;
+    }
+
+}
+@media (max-width:1000px){
+.top-story-container{
+    grid-template-columns: 1fr;
+}
+}
