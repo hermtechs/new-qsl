@@ -116,31 +116,6 @@ header{
     padding: 0.3rem;
     letter-spacing: 1.5px;
 }
-
-.input-wrapper{
-    padding: 1rem;
-}
-.input-wrapper input{
-    outline: none;
-    border: none;
-    padding: 0.5rem 3rem;
-    border-radius: 1.3rem;
-    background: #fff;
-    position: relative;
-}
-.input-wrapper span{
-    background: #005ACB;
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-    border-radius: 50%;
-    position: absolute;
-    margin-left:-2.1rem;
-    color: #fff;
-}
-.news-letter-txt{
-    font-size: 1rem;
-    font-weight: 600;
-}
-
 /* SECTION TOP STORIES */
 .section-top-stories{
  /* width: 500px; */
