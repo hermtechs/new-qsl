@@ -33,41 +33,34 @@ a{
 
 /* NAV STYLES */
 .logo{
-    font-size: 1.2rem;
-    color: var(--clr-primary1);
-    color: #444ed6;
+    font-size: 1.4rem;
+    color: #fff;
     text-transform: uppercase;
     font-weight: 500;
-    font-style: oblique;
+    /* font-style: oblique; */
 }
 nav{
-  padding: 1.2rem;
+  padding: 1.1rem;
+  background: #a80939;
+  color:#fff;
+  opacity: 0.95;
 }
 nav a{
-    /* color: #fff */
-    color: #005ACB;
+    color: #dddd;
     font-weight: 600;
+    font-size: 1.2rem;
 }
 .nav-small-screen{
     display: none;
     justify-content: space-around;
     align-items: center;
 }
-.humburger{
-    background: url("/icons/football-svgrepo-blue.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 0.1rem;
-}
-
 .humburger span{
-    background: #300ec678;
-    width: 1.9rem;
+    background: #fff;
+    width: 1.7rem;
     height: 0.2rem;
     display: block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }    
 .nav-big-screen{
     display: grid;
@@ -79,7 +72,7 @@ nav a{
    margin-left: 1rem; 
 }
 .nav-big-screen .logo{
-    font-size: 1rem
+    font-size: 1.2rem
 }
 .social-media>*{
 margin-left: 0.5rem;
@@ -97,6 +90,7 @@ header{
     background-position: center center;
     position: relative;
 }
+
 .story-for-day-heading{
     color: #fff;
     position: absolute;
@@ -108,6 +102,16 @@ header{
     padding: 1rem;
     border: 2px solid #fff;
 }
+.story-for-day-heading .category{
+    font-size: 1rem;
+    margin-left: 1rem;
+    color: #fff;
+    font-weight: 900;
+    background: #660724;
+    padding: 0.3rem;
+    letter-spacing: 1.5px;
+}
+
 .input-wrapper{
     padding: 1rem;
 }
@@ -369,8 +373,9 @@ padding: 0rem 0rem 2rem 0rem;
 
 
 /* MEDIA QUERIES -always keep this at the end of all code */
+
 /* styles apply as long as screen not bigger than 800px */
-@media (max-width:800px){
+@media (max-width:1050px){
 .nav-big-screen{
     display: none;
 }
@@ -388,8 +393,6 @@ padding: 0rem 0rem 2rem 0rem;
     }
 
     .section-heading-wrapper{
-        /* justify-content: space-evenly;
-         */
          margin: 1rem 6rem 1rem 6rem;
     }
 }
