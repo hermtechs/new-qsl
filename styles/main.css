@@ -352,6 +352,72 @@ padding: 0rem 0rem 2rem 0rem;
 /* SECTION TOP STORIES */
 
 
+/* JOSEPH CSS STARTS HERE */
+.news-category-section{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+}
+.news-category-section a{
+    text-decoration: none;
+    color: #000;
+}
+
+.football-updates-section img{
+    width: 320px;
+}
+.football--updates{
+    width: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #18011a;
+    color: #fff;
+    margin-bottom: 0.9rem;
+}
+.football--updates a{
+    color: #fff;
+}
+.football--desc{
+    padding: 10px 15px;
+}
+.football--updates h4 a{
+    border: 1px solid #fff;
+    padding: 4px 8px;
+    
+}
+.football--updates h4{
+    margin-bottom: 0.4rem;
+}
+.news-category-section .time--stamp{
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+.site-breaking-news{
+    width: 320px;
+}
+.site--breaking-news{
+    margin-bottom: 0.6rem;
+}
+.news-category-advert{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+.invisible-ad{
+    margin-top: 13rem;
+    visibility: hidden;
+}
+.news-category-section .news-category-advert{
+    position: sticky;
+    /* top: 0; */
+}
+/* JOSEPH CSS ENDS HERE */
+
+
 /* MEDIA QUERIES -always keep this at the end of all code */
 
 /* styles apply as long as screen not bigger than 800px */
