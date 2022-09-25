@@ -226,7 +226,7 @@ padding: 0rem 0rem 2rem 0rem;
     background-position: center center;   
     color: #fff;
     padding: 9em 1em;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
 /*END  OF TOP STORY POST */
@@ -246,7 +246,7 @@ padding: 0rem 0rem 2rem 0rem;
     background-position: center center;   
     color: #fff;
     padding: 9em 1em;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 /* END OF WORLD CUP POST */
@@ -294,14 +294,14 @@ padding: 0rem 0rem 2rem 0rem;
     /* height: 450px; */
     background: #eee;
     padding: 1rem;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
   .small-posts .small-post{
     display: flex;
     margin: 1rem 0.1rem 1.5rem 0.1rem;
     gap:1rem;
-    height: 90px;
+    height: 95px;
     max-height: 150px;
     padding: 0rem 0.2rem;
     font-weight: 400;
@@ -309,7 +309,7 @@ padding: 0rem 0rem 2rem 0rem;
   .small-posts .small-post img{
     height: 100%;
     /* width: 100%; */
-    border-radius: 0.4rem;
+    border-radius: 0.15rem;
   }
   .description-txt{
   text-align: center;
