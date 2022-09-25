@@ -473,6 +473,15 @@ padding: 0rem 0rem 2rem 0rem;
 .site-breaking-news h2{
     font-size: 16px;
 }
+.football--updates img{
+    width: 100%;
+}
+.site-breaking-news{
+    width: 100%;
+}
+.football--updates{
+    width: 100%;
+}
 
 }
 @media (max-width:500px) {
