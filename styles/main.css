@@ -99,10 +99,10 @@ margin-left: 0.5rem;
 }
 /* NAV STYLES */
 header{
-    background-color: #93143a;
+    background: #93143a;
     background:url(/images/lusail-stadium.webp);
     background-blend-mode:multiply;
-    height: 80vh;
+    height: 85vh;
     /* clip-path: circle(100.2% at 49% 0); */
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -326,10 +326,10 @@ padding: 0rem 0rem 2rem 0rem;
     /* width: 100%; */
     border-radius: 0.15rem;
   }
-  .description-txt{
+  /* .description-txt{
   text-align: center;
   padding: 0.1rem 1rem;
-}
+} */
 .bigger-post-description>*+*{
   /* margin-top: 1rem; */
   margin-bottom: 1rem;
