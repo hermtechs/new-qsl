@@ -469,6 +469,7 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .news-category-section{
     flex-wrap: wrap;
+    margin: 0 1.5rem;
 }
 .site-breaking-news h2{
     font-size: 16px;
