@@ -357,7 +357,7 @@ padding: 0rem 0rem 2rem 0rem;
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin: 20px;
     position: relative;
 }
 .news-category-section a{
@@ -366,12 +366,11 @@ padding: 0rem 0rem 2rem 0rem;
 }
 
 .football-updates-section img{
-    width: 320px;
+    width: 420px;
 }
 .football--updates{
-    width: 320px;
+    width: 420px;
     overflow: hidden;
-    border-radius: 8px;
     background-color: #18011a;
     color: #fff;
     margin-bottom: 0.9rem;
@@ -397,7 +396,7 @@ padding: 0rem 0rem 2rem 0rem;
     opacity: 0.6;
 }
 .site-breaking-news{
-    width: 320px;
+    width: 420px;
 }
 .site--breaking-news{
     margin-bottom: 0.6rem;
@@ -405,15 +404,29 @@ padding: 0rem 0rem 2rem 0rem;
 .news-category-advert{
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 420px;
 }
-.invisible-ad{
-    margin-top: 13rem;
-    visibility: hidden;
-}
+
 .news-category-section .news-category-advert{
     position: sticky;
     /* top: 0; */
+}
+.news-category-section img{
+    transition: 0.3s ease-in-out;
+}
+.news-category-section img:hover{
+    transform: scale(1.05);
+}
+.news-category-advert .big-screen-ad{
+    display: block;
+}
+.news-category-advert .small-screen-ad{
+    display: none;
+}
+.site-breaking-news h2 a{
+    background-color: #af1d49;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
 }
 /* JOSEPH CSS ENDS HERE */
 
@@ -446,6 +459,21 @@ padding: 0rem 0rem 2rem 0rem;
 .top-story-container{
     grid-template-columns: 1fr;
 }
+/* ====================== */
+/* JOSEPH CSS MEDIA QUERRY */
+.news-category-advert .big-screen-ad{
+    display: none;
+}
+.news-category-advert .small-screen-ad{
+    display: block;
+}
+.news-category-section{
+    flex-wrap: wrap;
+}
+.site-breaking-news h2{
+    font-size: 16px;
+}
+
 }
 @media (max-width:500px) {
     .small-post img{
