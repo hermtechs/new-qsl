@@ -102,7 +102,7 @@ header{
     background: #93143a;
     background:url(/images/lusail-stadium.webp);
     background-blend-mode:multiply;
-    height: 85vh;
+    height: 80vh;
     /* clip-path: circle(100.2% at 49% 0); */
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -212,7 +212,7 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .section-heading-wrapper h3{
     /* border: 2px solid #2313b1; */
-    background: #af1d49;
+    background: #660724;
     padding: 0.5rem 0.2rem 0.5rem 0.2rem ;
     border-radius: 0.1rem;
     color: #fff;
