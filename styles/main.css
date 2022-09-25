@@ -428,6 +428,9 @@ padding: 0rem 0rem 2rem 0rem;
     color: #fff;
     padding: 0.2rem 0.6rem;
 }
+.small-screen-more-category{
+    display: none;
+}
 /* JOSEPH CSS ENDS HERE */
 
 
@@ -469,10 +472,16 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .news-category-section{
     flex-wrap: wrap;
-    margin: 0 1.5rem;
+    margin: 10px;
 }
 .site-breaking-news h2{
     font-size: 16px;
+}
+.big-screen-breaking-category{
+    display: none;
+}
+.small-screen-more-category{
+    display: block;
 }
 .football--updates img{
     width: 100%;
