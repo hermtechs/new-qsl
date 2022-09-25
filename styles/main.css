@@ -102,12 +102,12 @@ header{
     background: #93143a;
     background:url(/images/lusail-stadium.webp);
     background-blend-mode:multiply;
-    height: 85vh;
+    height: 80vh;
     /* clip-path: circle(100.2% at 49% 0); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     position: relative;
 }
 
