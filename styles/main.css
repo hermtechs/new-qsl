@@ -20,9 +20,9 @@ html{
   img{
     max-width: 100%;
   }
-h1,h2,h3,h4,h5,h6{
+/* h1,h2,h3,h4,h5,h6{
 
-}
+} */
 a{
   text-decoration: none;
   /* font-weight: 400;   */
@@ -52,7 +52,7 @@ nav{
 }
 nav a{
     color: #dddd;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 1.2rem;
 }
 .nav-small-screen{
@@ -73,6 +73,9 @@ nav a{
     justify-content: center;
     align-items: center;
 }
+.nav-big-screen .fa-chevron-down{
+    font-size: 0.8rem;
+}
 .big-screen-links>*{
    margin-left: 1rem; 
 }
@@ -82,17 +85,29 @@ nav a{
 .social-media>*{
 margin-left: 0.5rem;
 }
+.big-screen-links:hover{
+
+}
+.big-screen-links a::after{
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 2px;
+    background: #fff;
+    margin-left: -20px;
+
+}
 /* NAV STYLES */
 header{
-    background-color: #93143a;
+    background: #93143a;
     background:url(/images/lusail-stadium.webp);
     background-blend-mode:multiply;
-    height: 80vh;
+    height: 85vh;
     /* clip-path: circle(100.2% at 49% 0); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center center;
     position: relative;
 }
 
@@ -293,7 +308,7 @@ padding: 0rem 0rem 2rem 0rem;
   .small-posts{
     /* height: 450px; */
     background: #eee;
-    padding: 1rem;
+    padding: 0.3rem;
     /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
@@ -311,10 +326,10 @@ padding: 0rem 0rem 2rem 0rem;
     /* width: 100%; */
     border-radius: 0.15rem;
   }
-  .description-txt{
+  /* .description-txt{
   text-align: center;
   padding: 0.1rem 1rem;
-}
+} */
 .bigger-post-description>*+*{
   /* margin-top: 1rem; */
   margin-bottom: 1rem;
@@ -458,10 +473,14 @@ padding: 0rem 0rem 2rem 0rem;
          margin: 1rem 6rem 1rem 6rem;
     }
 }
+@media(min-width:1000px){
+header{background-position: center center};
+}
 @media (max-width:1000px){
 .top-story-container{
     grid-template-columns: 1fr;
 }
+
 /* ====================== */
 /* JOSEPH CSS MEDIA QUERRY */
 .news-category-advert .big-screen-ad{
