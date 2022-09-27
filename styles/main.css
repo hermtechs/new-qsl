@@ -37,7 +37,7 @@ a{
 }
 /* NAV STYLES */
 .logo{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #fff;
     text-transform: uppercase;
     font-weight: 500;
@@ -68,7 +68,7 @@ nav a{
 .humburger span{
     background: #fff;
     width: 1.7rem;
-    height: 0.2rem;
+    height: 0.1rem;
     display: block;
     margin-bottom: 0.3rem;
 }    
@@ -238,7 +238,7 @@ padding: 0rem 0rem 2rem 0rem;
     height:450px;
     background: #200518;
     background: url("/images/horse-jumping.jpg"),
-                       radial-gradient(#cac7c7, #340329);
+                       radial-gradient(#cac7c7, #2c0323);
     background-blend-mode: multiply;
     background-size: cover;
     background-repeat: no-repeat;
@@ -457,7 +457,7 @@ footer{
 footer h6{
     padding: 0.5rem;
     font-size: 0.9rem;
-    color: rgb(215, 204, 204);
+    color: #7a6f6f;
 }
 .copyright-container{
     display: flex;
@@ -495,14 +495,17 @@ footer h6{
 .subscribe-newsletter .fa-chevron-right{
     position: absolute;
     color: #fff;
-    background: #d92399;
+    background: #cd128b;
     padding: 0.6rem 0.7rem;
     border-radius: 0px 6px 6px 0px;
     /* margin-top: -0.15rem; */
 }
 .subscribe-newsletter p{
-    color: #eee;
+    color: #bbb7dd;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 /*END OF FOOTER */
 
