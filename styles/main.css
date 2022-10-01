@@ -241,6 +241,9 @@ padding: 0rem 0rem 2rem 0rem;
 .section-heading-light{
     color: #fff;
 }
+.section-heading{
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem); 
+}
 .section-heading-wrapper h3{
     /* border: 2px solid #2313b1; */
     background: #660724;
@@ -440,6 +443,69 @@ padding: 0rem 0rem 2rem 0rem;
     color: #0202cf;
 }
 /* JOSEPH CSS ENDS HERE */
+/* SECTION VIDEOS */
+.videos-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 2rem; */
+    padding-bottom: 2rem;
+}
+.videos-post{
+    max-width: 400px;
+    margin: 1rem;
+    height: 300px;
+    transition:250ms ease-in-out;
+    cursor: pointer;
+}
+.videos-post:hover{
+    transform: scale(1.01);
+}
+.video-thumb{
+    position: relative;
+    height: 100%;
+}
+.video-thumb img{
+    width: 100%;
+    height: 100%;
+}
+.video-overlay{
+    position: absolute;
+    background: rgba(6, 5, 5, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.video-txt{
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2rem;
+    color: #ffff;
+    z-index: 2;
+    font-weight: 600;
+}
+.video-play-btn{
+    font-size: 0.8rem;
+    background: #ec4a7b;
+    padding: 0.6rem 0.7rem;
+    border-radius:60%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.section-videos-heading{
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+    padding: 0.2rem 0.2rem;
+    font-size: clamp(1.3rem, 2.5vw, 2rem); 
+    /* background: #970430; */
+    /* color: #fff; */
+    /* color: #af1d49; */
+    
+}
+
+/*END OF SECTION VIDEOS */
 
 /* FOOTER */
  .footer-wrapper{
