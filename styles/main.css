@@ -30,6 +30,14 @@ a{
 /* body{
     background: #8a1538;
 } */
+.btn-share-post{
+    margin-left: 2rem;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+.btn-share-post:hover{
+    transform: scale(1.1);
+}
 .ad{
     color: #333;
     text-align: center;
