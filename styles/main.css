@@ -45,6 +45,25 @@ a{
     /* font-style: oblique; */
     font-family: 'Press Start 2P', cursive;
 }
+.btn-see-more{
+    /* text-align: center; */
+    border: 1.5px solid #660724;
+    max-width: 100px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.1rem;
+    font-weight: 550;
+    transition: 250ms ease-in-out;
+    /* font-weight: bold; */
+    color: #200518;
+    /* padding: 0.1rem 1rem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ; */
+}
+.btn-see-more:hover{
+    transform: scale(1.05);
+}
 nav{
   padding: 0.5rem;
   background: #660724;
@@ -450,7 +469,7 @@ padding: 0rem 0rem 2rem 0rem;
     align-items: center;
     justify-content: center;
     /* padding-top: 2rem; */
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .videos-post{
     max-width: 400px;
@@ -460,7 +479,7 @@ padding: 0rem 0rem 2rem 0rem;
     cursor: pointer;
 }
 .videos-post:hover{
-    transform: scale(1.01);
+    transform: scale(1.015);
 }
 .video-thumb{
     position: relative;
