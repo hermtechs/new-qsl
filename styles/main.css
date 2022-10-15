@@ -160,6 +160,17 @@ margin-left: 0.5rem;
 .big-screen-links:hover{
 
 }
+/* Progress-bar starts from here */
+#Progress-bar{
+    --progress: 0;
+    height: 4px;
+    width: var(--progress);
+    background-color: #03a9fc;
+    z-index: 1000;
+    position: absolute;
+    bottom: -0.1rem;
+    left: 0;
+  }
 /* NAV STYLES */
 header{
     background: #93143a;
