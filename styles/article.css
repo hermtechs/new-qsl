@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+:root{
+    --clr-primary:#be1c4d;
+    --clr-primary1:#ec4a7b;
+    --clr-secondary:#8a1538;
+    --clr-background:#ff004c;
+    /* --clr-section-gradient:; */
+    --clr-accent:#fd6fff;
+}
+
+html{
+    scroll-behavior: smooth;
+  }
+  img{
+    max-width: 100%;
+  }
+/* h1,h2,h3,h4,h5,h6{
+
+} */
+a{
+  text-decoration: none;
+  /* font-weight: 400;   */
+}
+/* body{
+    background: #8a1538;
+} */
+.btn-share-post{
+    margin-left: 2rem;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+.btn-share-post:hover{
+    transform: scale(1.1);
+}
+.ad{
+    color: #333;
+    text-align: center;
+    background: #eee;
+    position: relative;
+}
+/* NAV STYLES */
+.logo{
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    /* font-style: oblique; */
+    font-family: 'Press Start 2P', cursive;
+}
+.btn-see-more{
+    /* text-align: center; */
+    display: block;
+    border: 2px solid #660724;
+    max-width: 150px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.1rem;
+    font-weight: 550;
+    transition: 250ms ease-in-out;
+    /* font-weight: bold; */
+    color: #660724 !important;
+    padding: 0.3rem 1.4rem;  
+    /* background: #b00d67   ; */
+    text-transform: capitalize
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
+}
+.btn-see-more:hover{
+    transform: scale(1.05);
+}
+nav{
+  padding: 0.5rem;
+  background: #660724;
+  color:#fff;
+  opacity: 0.95;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.logo img{
+    max-width: 200px;
+    max-height: 45px;
+}
+nav a{
+    color: #eee;
+    /* font-weight: 600; */
+    font-size: 1.2rem;
+}
+.nav-small-screen{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+.humburger span{
+    background: #fff;
+    width: 1.7rem;
+    height: 0.1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}    
+.nav-big-screen{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.nav-big-screen .fa-chevron-down{
+    font-size: 0.6rem;
+}
+.big-screen-links a{
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    transition: 250ms ease-in-out;
+}
+.big-screen-links a:hover{
+    /* color: blueviolet; */
+    border-bottom: 2px solid #fff;
+}
+.big-screen-links>*{
+   margin-left: 1rem; 
+}
+.nav-big-screen .logo{
+    font-size: 1.2rem
+}
+.social-media>*{
+margin-left: 0.5rem;
+}
+.social-media{
+    background: #eee;
+    padding: 0.1rem;
+    border-radius: 0.1rem;
+}
+.social-media a i{
+    transition: 250ms ease-in;
+}
+.social-media a i:hover{
+    transform: scale(1.15);
+}
+.social-media a:nth-of-type(1){
+    color: #4267B2;
+    /* font-weight: 500; */
+}
+.social-media a:nth-of-type(2){
+  color:#1DA1F2;  
+}
+.social-media a:nth-of-type(3){
+    color: #efc689;
+}
+.social-media a:nth-of-type(4){
+   color: #FF0000; 
+}
+
+.big-screen-links:hover{
+
+}
+/* NAV STYLES */
+header{
+    position: relative;
+}
+
+/* SECTION TOP STORIES */
+.section-top-stories{
+ /* width: 500px; */
+
+}
+.header{
+background: #18011a;  /* fallback for old browsers */
+/* background: -webkit-radial-gradient( #6f0000, #d82c66);  */
+ /* Chrome 10-25, Safari 5.1-6 */
+/* background: radial-gradient(#180104, #410c0c);  */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 0rem 0rem 2rem 0rem;
+}
+
+
+
+/* MEDIA QUERIES -always keep this at the end of all code */
+
+/* styles apply as long as screen not bigger than 800px */
+@media (max-width:1050px){
+    .nav-big-screen{
+        display: none;
+    }
+    .nav-small-screen{
+        display: flex;
+    }
+    }

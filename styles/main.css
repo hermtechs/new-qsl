@@ -77,6 +77,13 @@ a{
 .btn-see-more:hover{
     transform: scale(1.05);
 }
+.logo img{
+    max-width: 180px;
+    max-height: 45px;
+    position: relative;
+    top: 0.3rem;
+
+}
 nav{
   padding: 0.5rem;
   background: #660724;
@@ -495,6 +502,7 @@ padding: 0rem 0rem 2rem 0rem;
     transition:250ms ease-in-out;
     cursor: pointer;
 }
+
 .videos-post:hover{
     transform: scale(1.015);
 }
