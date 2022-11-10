@@ -100,10 +100,12 @@ nav a{
     /* font-weight: 600; */
     font-size: 1.2rem;
 }
+
 .nav-small-screen{
     display: none;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 0rem 1.5rem 0rem 1.5rem;
 }
 .humburger span{
     background: #fff;

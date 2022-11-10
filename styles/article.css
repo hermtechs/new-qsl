@@ -93,9 +93,6 @@ nav{
     max-height: 35px;
     position: relative;
     top: 0.15rem;
-    outline: 2px solid blue;
-    shape-outside: circle(20%);
-    shape-margin: 1em;
 }
 nav a{
     color: #eee;
@@ -104,8 +101,9 @@ nav a{
 }
 .nav-small-screen{
     display: none;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 0rem 1.5rem 0rem 1.5rem;
 }
 .humburger span{
     background: #fff;
@@ -182,8 +180,15 @@ padding: 0rem 0rem 2rem 0rem;
 
 /* MAIN CONTENT STYLES */
     main{
-        /* padding: 1rem; */
+        padding: 1rem;
         margin: 1rem;
+    }
+    .all-content-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #f8f8f8;
     }
 
     .main-img{
@@ -192,16 +197,19 @@ padding: 0rem 0rem 2rem 0rem;
         max-width: 870px;
         max-height: 480px;
         object-fit: fill;
+        padding: 1rem;
     }
     .article-header{
         display: grid;
         grid-template-columns: 3fr 1fr;
         align-items: center;
         justify-content: center;
+        padding: 1rem;
     }
     .main-news-title{
         margin: 2rem 0rem 0.4rem 0rem;
         max-width: 900px;
+        /* padding: 0.1rem; */
     }
     .time-stamp .time{
         font-size: 0.8rem;
@@ -217,6 +225,22 @@ padding: 0rem 0rem 2rem 0rem;
     }
     .share-btns>*{
         padding: 0.4rem;
+    }
+    .content-body p{
+        /* margin-bottom: 1rem; */
+        line-height: 1.75;
+        max-width: 750px;
+        padding: 1rem;
+    }
+    .embeded-container{
+        padding: 1rem;
+        margin: 1rem;
+        display: grid;
+        justify-content: center;
+        /* justify-items: center; */
+    }
+    .subheading{
+        padding: 1rem;
     }
 
 /* MAIN CONTENT STYLES */
