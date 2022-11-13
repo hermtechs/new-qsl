@@ -288,7 +288,7 @@ padding: 0rem 0rem 2rem 0rem;
         margin: 1.5rem 0rem 0.4rem 0rem;
         max-width: 850px;
         /* padding: 0.1rem; */
-        font-size: clamp(1rem, 5vw, 1.8rem);
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
         letter-spacing: 1.5px;
     }
     .time-stamp .time{
@@ -301,10 +301,11 @@ padding: 0rem 0rem 2rem 0rem;
         justify-items: center
     }
     .time-stamp>*{
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
     .share-btns>*{
         padding: 0.4rem;
+
     }
     .content-body p{
         /* margin-bottom: 1rem; */
