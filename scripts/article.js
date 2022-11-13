@@ -4,6 +4,7 @@ const closeSideMenuBtn = document.querySelector('.close-menu');
 // console.log(closeSideMenuBtn)
 // console.log(navBtn)
 navBtn.addEventListener('click', ()=>{
+        smallScreenMenu.style.display = "flex"
         smallScreenMenu.style.transform = 'translateX(0%)'
 })
 const navLinksSmallScreen = document.querySelectorAll(".small-screen-links a");
@@ -14,4 +15,5 @@ navLinksSmallScreen.forEach(link=>{
 })
 closeSideMenuBtn.addEventListener('click', ()=>{
     smallScreenMenu.style.transform = 'translateX(-100%)'
+    // smallScreenMenu.style.display = "none"
 })

@@ -168,8 +168,8 @@ margin-left: 0.5rem;
 }
 .small-screen-menu{
     /* background: #660724; */
+    /* display: none; */
     transform: translateX(-100%);
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: fixed;
@@ -202,6 +202,7 @@ margin-left: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -2rem;
 }
 .social-media-small-screens>*{
     margin: 1.02rem;
@@ -233,7 +234,7 @@ header{
 background: #18011a; 
 padding: 0rem 0rem 2rem 0rem;
 }
-/* NAV STYLES */
+/*END OF NAV STYLES */
 
 
 

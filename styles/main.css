@@ -195,6 +195,7 @@ margin-left: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -2rem;
 }
 .social-media-small-screens>*{
     margin: 1.02rem;
