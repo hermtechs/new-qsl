@@ -45,14 +45,6 @@ a{
     position: relative;
 }
 /* NAV STYLES */
-.logo{
-    /* font-size: 1.2rem; */
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 500;
-    /* font-style: oblique; */
-    /* font-family: 'Press Start 2P', cursive; */
-}
 .btn-see-more{
     /* text-align: center; */
     display: block;
@@ -77,29 +69,28 @@ a{
 .btn-see-more:hover{
     transform: scale(1.05);
 }
-.logo img{
-    max-width: 120px;
-    max-height: 30px;
-    position: relative;
-    top: 0.3rem;
-}
 nav{
-  padding: 0.2rem;
+  padding: 0.4rem;
   background: #660724;
   color:#fff;
-  opacity: 0.95;
+  opacity: 0.98;
   position: fixed;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1000;
 }
+.logo img{
+    max-width: 120px;
+    max-height: 30px;
+    position: relative;
+    top: 0.15rem;
+}
 nav a{
     color: #eee;
     /* font-weight: 600; */
     font-size: 1.2rem;
 }
-
 .nav-small-screen{
     display: none;
     justify-content: space-between;
@@ -108,8 +99,8 @@ nav a{
 }
 .humburger span{
     background: #fff;
-    width: 1.7rem;
-    height: 0.1rem;
+    width: 1.6rem;
+    height: 0.12rem;
     display: block;
     margin-bottom: 0.3rem;
 }    
@@ -168,9 +159,116 @@ margin-left: 0.5rem;
 .big-screen-links:hover{
 
 }
+.small-screen-menu{
+    /* background: #660724; */
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    background: #660724;  /*fallback bg color for old and unsupported browsers*/
+    background:linear-gradient(-120deg, #660724, #ba1d4c, #660724);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 200ms ease-in;
+}
+.small-screen-menu .small-screen-links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* align-items: center; */
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    max-height: 400px;
+    width: 100%;
+    margin-left: 2rem;
+}
+.small-screen-links a{
+    font-size: 1rem;
+}
+.social-media-small-screens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-media-small-screens>*{
+    margin: 1.02rem;
+}
+.small-screen-menu-header-container{
+    border-bottom: 1px solid #9c8e8e;
+}
+.small-screen-menu-header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 0.4rem;
+}
+.close-menu{
+    display: block;
+    cursor: pointer;
+}
+ .close-menu i{
+    font-size: 1.25rem;
+}
+header{
+    position: relative;
+}
+.header{
+background: #18011a; 
+padding: 0rem 0rem 2rem 0rem;
+}
+/* NAV STYLES */
+.logo{
+    /* font-size: 1.2rem; */
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    /* font-style: oblique; */
+    /* font-family: 'Press Start 2P', cursive; */
+}
+.btn-see-more{
+    /* text-align: center; */
+    display: block;
+    border: 2px solid #660724;
+    max-width: 150px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.1rem;
+    font-weight: 550;
+    transition: 250ms ease-in-out;
+    /* font-weight: bold; */
+    color: #660724 !important;
+    padding: 0.3rem 1.4rem;  
+    /* background: #b00d67   ; */
+    text-transform: capitalize
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
+}
+.btn-see-more:hover{
+    transform: scale(1.05);
+}
+.logo img{
+    max-width: 120px;
+    max-height: 30px;
+    position: relative;
+    top: 0.3rem;
+}
+
 /* NAV STYLES */
 header{
-    background: #93143a;
+    /* background: #93143a; */
     background:url(/images/lusail-stadium.webp);
     background-blend-mode:multiply;
     height: 80vh;
@@ -211,11 +309,7 @@ header{
 
 } */
 .header{
-background: #18011a;  /* fallback for old browsers */
-/* background: -webkit-radial-gradient( #6f0000, #d82c66);  */
- /* Chrome 10-25, Safari 5.1-6 */
-/* background: radial-gradient(#180104, #410c0c);  */
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #18011a;  
 padding: 0rem 0rem 2rem 0rem;
 }
 .quick-links{
