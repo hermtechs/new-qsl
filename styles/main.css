@@ -188,10 +188,11 @@ header{
     bottom: 0;
     margin-bottom: 1.8rem;
     margin-left: 0.2rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: clamp(1rem, 10vw, 2.5rem); 
     padding: 1rem;
     border: 2px solid #fff;
+    letter-spacing: 1.5px;
 }
 .story-for-day-heading .category{
     font-size: 1rem;
@@ -200,13 +201,15 @@ header{
     font-weight: 900;
     background: #660724;
     padding: 0.3rem;
-    letter-spacing: 1.5px;
+    letter-spacing:3px;
+    text-transform: capitalize;
+    display: inline-block;
 }
 /* SECTION TOP STORIES */
-.section-top-stories{
- /* width: 500px; */
+/* .section-top-stories{
+ 
 
-}
+} */
 .header{
 background: #18011a;  /* fallback for old browsers */
 /* background: -webkit-radial-gradient( #6f0000, #d82c66);  */
