@@ -200,7 +200,7 @@ margin-left: 0.5rem;
     height: 100%;
     max-height: 400px;
     width: 100%;
-    margin-left: 3.8rem;
+    margin-left: 3.5rem;
 }
 .small-screen-links a{
     font-size: 1rem;
@@ -210,7 +210,7 @@ margin-left: 0.5rem;
     justify-content: center;
 }
 .social-media-small-screens>*{
-    margin: 1.5rem;
+    margin: 1.03rem;
     align-items: center;
 }
 .small-screen-menu-header-container{
