@@ -48,11 +48,15 @@ const shareData = {
 //   const resultPara = document.querySelector('.result'); //TO-DO:unfinished  
   // Share open sharing dialoguebox after click and share link"
   shareToAllBtn.addEventListener('click', async () => {
+    if(navigator.share){
     try {
       await navigator.share(shareData);
     //   resultPara.textContent = 'MDN shared successfully'; //tracking how many shared
     } catch (err) {
     //   resultPara.textContent = `Error: ${err}`;
     console.log('error')
+    }}
+    else{
+        console.log('not on mobile')
     }
   });

@@ -266,6 +266,7 @@ padding: 0rem 0rem 2rem 0rem;
         max-height: 480px;
         object-fit: fill;
         padding: 1rem;
+        border-radius: 1.1rem;
     }
     .main-img:first-of-type{
         max-width: 1000px;
