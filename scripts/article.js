@@ -30,7 +30,7 @@ copyLinkBtn.addEventListener('click', ()=>{
 const copyLink = async () => {
     try {
       await navigator.clipboard.writeText(websiteUrl);
-      console.log(websiteUrl);
+    //   console.log(websiteUrl);
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
@@ -44,6 +44,7 @@ const shareData = {
     text: websiteText,
     url: websiteUrl
   }
+//   console.log(shareData)
 //   const resultPara = document.querySelector('.result'); //TO-DO:unfinished  
   // Share open sharing dialoguebox after click and share link"
   shareToAllBtn.addEventListener('click', async () => {
