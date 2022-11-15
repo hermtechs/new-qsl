@@ -1,11 +1,13 @@
 const navBtn = document.querySelector('.humburger');
 const smallScreenMenu = document.querySelector('.small-screen-menu');
 const closeSideMenuBtn = document.querySelector('.close-menu');
-const shareToAllBtn = document.querySelector('.share-all');
-const copyLinkBtn = document.querySelector('.copylink');
+const shareToAllBtn = document.querySelectorAll('.share-all');
+const copyLinkBtn = document.querySelectorAll('.copylink');
 const websiteUrl = document.URL;
 const websiteTitle = document.querySelector('title').innerText;
 const websiteText = document.querySelector('.main-news-title').innerText;
+const shareToFb = document.querySelectorAll('.share-to-Fb')
+const shareToTwitter = document.querySelectorAll('.share-to-twitter')
 // console.log(websiteUrl)
 // console.log(closeSideMenuBtn)
 // console.log(navBtn)
@@ -25,7 +27,7 @@ closeSideMenuBtn.addEventListener('click', ()=>{
 })
 
 //copy website url to website
-copyLinkBtn.addEventListener('click', ()=>{
+copyLinkBtn.forEach(btn=>btn.addEventListener('click', ()=>{
 // alert('link copped');
 const copyLink = async () => {
     try {
@@ -37,6 +39,7 @@ const copyLink = async () => {
   }
 copyLink();
 })
+)
 
 //SHARE LINK VIA NAVIGATOR API 
 const shareData = {
@@ -47,16 +50,18 @@ const shareData = {
 //   console.log(shareData)
 //   const resultPara = document.querySelector('.result'); //TO-DO:unfinished  
   // Share open sharing dialoguebox after click and share link"
-  shareToAllBtn.addEventListener('click', async () => {
-    if(navigator.share){
+  shareToAllBtn.forEach(btn=>btn.addEventListener('click', async () => {
+    // if(navigator.share){
     try {
       await navigator.share(shareData);
     //   resultPara.textContent = 'MDN shared successfully'; //tracking how many shared
     } catch (err) {
     //   resultPara.textContent = `Error: ${err}`;
     console.log('error')
-    }}
-    else{
-        console.log('not on mobile')
     }
-  });
+// }
+  })
+  );
+  //making share to facebook and twitter buttons dynamic
+  shareToTwitter.forEach(btn=>btn.href = `http://twitter.com/share?url=${websiteUrl}`)
+  shareToFb.forEach(btn=>btn.href = `http://www.facebook.com/share.php?u=${websiteUrl}`)

@@ -251,6 +251,29 @@ padding: 0rem 0rem 2rem 0rem;
       grid-template-columns: 1fr;
       margin: 1rem;
     } */
+    .share-btns>*{
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .share-btns .fa-twitter{
+        color:#1DA1F2;
+    }
+    .share-btns .fa-facebook{
+        color:#4267B2;
+    }
+    .share-btns .copylink{
+        color: #817979;
+    }
+    .share-btns .share-all{
+        color: #817979;
+    }
+    .share-btns .fa-twitter:hover,
+    .share-btns .fa-facebook:hover,
+    .share-btns .share-all:hover,
+    .share-btns .copylink:hover{
+        transform: scale(1.12);
+    }
+
     .content-body{
         display: grid;
         justify-items: center;
