@@ -283,6 +283,7 @@ padding: 0rem 0rem 2rem 0rem;
         justify-items: center;
         align-items: center;
         color: #49546b;
+        /* justify-content: center; */
         /* font-size: 1.2rem; */
     }
 
@@ -343,6 +344,11 @@ padding: 0rem 0rem 2rem 0rem;
     } */
     .subheading{
         padding: 1rem;
+    }
+    .sub-section{
+        display: grid;
+        /* justify-content: center; */
+        justify-items: center;
     }
 
 /* MAIN CONTENT STYLES */
