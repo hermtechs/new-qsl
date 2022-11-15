@@ -251,8 +251,12 @@ padding: 0rem 0rem 2rem 0rem;
       grid-template-columns: 1fr;
       margin: 1rem;
     } */
+    .time-stamp .time span, .time-stamp .time i{
+        font-size: 0.75rem;
+        color:#676161;
+    }
     .share-btns>*{
-        font-size: 1.2rem;
+        /* font-size: 1rem; */
         cursor: pointer;
     }
     .share-btns .fa-twitter{

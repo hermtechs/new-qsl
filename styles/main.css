@@ -156,9 +156,9 @@ margin-left: 0.5rem;
    color: #FF0000; 
 }
 
-.big-screen-links:hover{
-
-}
+/* .big-screen-links:hover{
+    TO DO TO DO
+} */
 .small-screen-menu{
     /* background: #660724; */
     transform: translateX(-100%);
