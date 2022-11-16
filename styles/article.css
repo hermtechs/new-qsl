@@ -107,6 +107,9 @@ nav a{
     align-items: center;
     margin: 0rem 1.5rem 0rem 1.5rem;
 }
+.humburger{
+    cursor: pointer;
+}
 .humburger span{
     background: #fff;
     width: 1.6rem;
@@ -310,14 +313,17 @@ padding: 0rem 0rem 2rem 0rem;
         grid-template-columns: 3fr 1fr;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
+        justify-items: center;
+        padding: 1rem 0.3rem 1rem 0.3rem;
     }
     .main-news-title{
         margin: 1.5rem 0rem 0.4rem 0rem;
         max-width: 850px;
         /* padding: 0.1rem; */
         font-size: clamp(1.4rem, 5vw, 1.8rem);
-        letter-spacing: 1.5px;
+        /* letter-spacing: 1.5px; */
+        color: #49546b;
+        text-transform: capitalize;
     }
     .time-stamp .time{
         font-size: 0.8rem;
@@ -477,7 +483,8 @@ footer h6{
     }
     @media (max-width:750px){
         .article-header{
-            grid-template-columns: 1fr
+            grid-template-columns: 1fr;
+            justify-items: unset;
         }
     }
 

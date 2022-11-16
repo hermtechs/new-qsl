@@ -97,6 +97,9 @@ nav a{
     align-items: center;
     margin: 0rem 1.5rem 0rem 1.5rem;
 }
+.humburger{
+    cursor: pointer;
+}
 .humburger span{
     background: #fff;
     width: 1.6rem;
