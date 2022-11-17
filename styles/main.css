@@ -416,7 +416,7 @@ padding: 0rem 0rem 2rem 0rem;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 9em 1em;
+    padding: 8em 1em;
     /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
@@ -426,11 +426,11 @@ padding: 0rem 0rem 2rem 0rem;
     max-width: 600px;
 }
   .top-story-big h2{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .top-story-big p{
     /* background: #0202cf; */
-    padding-top: 1rem;
+    padding-top: 0.3rem;
     padding-bottom: 0.5rem;
     line-height:2;
     font-weight: 600;
@@ -601,7 +601,7 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .small-posts-container{
     display: grid;   
-    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
     gap: 1rem;
     justify-content: center;
     justify-items: center;
