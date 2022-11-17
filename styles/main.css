@@ -613,17 +613,24 @@ padding: 0rem 0rem 2rem 0rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
+    min-height: 120px;
     max-width: 500px;
+    background: #eee;
 }
 .more-news-container .small-post .description-txt{
     max-width: 350px;
 }
 .more-news-container .small-post .description-txt{
     color: #18011a;
+  
 }
 .more-news-container .small-post .description-txt p,.more-news-container .small-post .description-txt h3{
     padding:0.1rem;
     font-size:1rem;
+    font-weight: 300;
+}
+.more-news-container .small-post .description-txt h3{
+    font-weight: 600;
 }
 .more-news-container .small-post img{
 max-height: 95px;
