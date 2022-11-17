@@ -409,14 +409,14 @@ padding: 0rem 0rem 2rem 0rem;
     height:450px;
     background: #200518;
     background: url("/images/fifa-sound/Artists_Combo_1040x585.jpg"),
-                       radial-gradient(#cac7c7, #2c0323);
+                       radial-gradient(#d6d6d6, #4e053e);
     background-blend-mode: multiply;
     background-size: cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center center;   
     color: #fff;
-    padding: 8em 1em;
+    padding: 7.5em 0.8em;
     /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
@@ -617,6 +617,9 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .more-news-container .small-post .description-txt{
     max-width: 350px;
+}
+.more-news-container .small-post .description-txt{
+    color: #18011a;
 }
 .more-news-container .small-post .description-txt p,.more-news-container .small-post .description-txt h3{
     padding:0.1rem;
