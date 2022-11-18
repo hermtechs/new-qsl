@@ -492,10 +492,14 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .description-txt-small p{
     margin-bottom: 0.5rem;
+    color: #fff;
 }
 .post-meta-data{
   /* background: #eed0e8;   */
   padding: 0.3rem;
+}
+.time-stamp{
+    color: #bdb2b2;
 }
 /* SECTION TOP STORIES */
 
@@ -510,7 +514,11 @@ padding: 0rem 0rem 2rem 0rem;
 }
 .news-category-section a{
     text-decoration: none;
-    color: #000;
+    color: #191717;
+    transition: 200ms ease-in;
+}
+.news-category-section a:hover{
+    color: #1010c6;
 }
 
 .football-updates-section img{
@@ -551,6 +559,9 @@ padding: 0rem 0rem 2rem 0rem;
 .site--breaking-news{
     margin-bottom: 0.6rem;
     /* border-bottom: 1px solid #333; */
+}
+.fa-clock{
+    padding: 0.5rem;
 }
 /* main{
     position: relative;
