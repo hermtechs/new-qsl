@@ -518,7 +518,7 @@ padding: 0rem 0rem 2rem 0rem;
     transition: 200ms ease-in;
 }
 .news-category-section a:hover{
-    color: #1010c6;
+    color: #3333d2;
 }
 
 .football-updates-section img{
@@ -574,10 +574,10 @@ padding: 0rem 0rem 2rem 0rem;
     top:0.5rem;
 } */
 .news-category-section img, .small-post img{
-    transition: 0.3s ease-in-out;
+    transition:350ms ease-in-out;
 }
 .news-category-section img:hover, .small-post img:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 .news-category-advert .big-screen-ad{
     display: block;
