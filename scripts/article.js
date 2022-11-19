@@ -62,6 +62,9 @@ const shareData = {
 // }
   })
   );
-  //making share to facebook and twitter buttons dynamic
-  shareToTwitter.forEach(btn=>btn.href = `http://twitter.com/share?url=${websiteUrl}`)
-  shareToFb.forEach(btn=>btn.href = `http://www.facebook.com/share.php?u=${websiteUrl}`)
+  document.addEventListener('DOMContentLoaded',()=>{
+ //making share to facebook and twitter buttons dynamic
+ shareToTwitter.forEach(btn=>btn.href = `http://twitter.com/share?url=${websiteUrl}`)
+ shareToFb.forEach(btn=>btn.href = `http://www.facebook.com/share.php?u=${websiteUrl}`)
+  })
+ 
