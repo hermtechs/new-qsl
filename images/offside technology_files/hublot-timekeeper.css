@@ -1,0 +1,196 @@
+.hublot-component {
+	width: 200px;
+	height: 140px;
+}
+  
+
+  .global-link {
+	display: block;
+	overflow: hidden;
+  }
+  
+  .hublot-timekeeper {
+	display: block;
+	border: none;
+	width: 200px;
+	height: 140px;
+	position: relative;
+	overflow: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+  }
+  .hublot-timekeeper img {
+	border: none;
+  }
+  .hublot-timekeeper.visible {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+  }
+  .hublot-timekeeper.hover .hublot-text {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+  
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	-ms-transform: scale(1);
+	/*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+	 M11=1, M12=-0, M21=0, M22=1);*/
+  }
+  .hublot-timekeeper.static .hublot-watch-static {
+	display: block;
+  }
+  .hublot-timekeeper.static .hublot-watch {
+	display: none;
+  }
+  .hublot-timekeeper.hover .hublot-watch,
+  .hublot-timekeeper.hover .hublot-watch-static {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+  
+	-moz-transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	/*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+	 M11=0.8, M12=-0, M21=0, M22=0.8);*/
+  }
+  .hublot-timekeeper .hublot-text,
+  .hublot-timekeeper .hublot-watch,
+  .hublot-timekeeper .hublot-watch-static {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .hublot-timekeeper .hublot-watch-static {
+	display: none;
+	z-index: 5;
+  }
+  
+  .hublot-timekeeper .hublot-watch {
+	z-index: 5;
+  
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+  }
+  .hublot-timekeeper img.hublot-img-watch {
+	position: absolute;
+	width: 100%;
+  }
+  
+  .hublot-timekeeper img.hublot-img-desktop {
+	display: block;
+  }
+  
+  .hublot-timekeeper img.hublot-img-mobile {
+	display: none;
+  }
+  
+  .hublot-timekeeper div.hublot-handles {
+	width: 200px;
+	height: 140px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+  
+  .hublot-timekeeper .hublot-watch div.handle {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+  
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	/*-ms-transform: rotate(0deg); */
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+  }
+  
+  .hublot-timekeeper .hublot-handles div.hublot-ease {
+	-webkit-transition: all 0.99s ease-out 0s;
+	-moz-transition: all 0.99s ease-out 0s;
+	-o-transition: all 0.99s ease-out 0s;
+	transition: all 0.99s ease-out 0s;
+  }
+  
+  .hublot-timekeeper .hublot-handles div.hublot-hour {
+	background: url(../images/hublot-timekeeper/hours.png) no-repeat scroll center 0px;
+	background-size: 9px 28px;
+	height: 48px;
+	left: 91px;
+	top: 44px;
+	width: 9px;
+	z-index: 2;
+  }
+  
+  .hublot-timekeeper .hublot-handles div.hublot-minute {
+	background: url(/images/hublot-timekeeper/minutes.png) no-repeat scroll center 0px;
+	background-size: 8px 38px;
+	height: 69px;
+	left: 92px;
+	top: 33px;
+	width: 8px;
+	z-index: 3;
+  }
+  
+  .hublot-timekeeper .hublot-handles div.hublot-second {
+	background: url(/images/hublot-timekeeper/seconds.png) no-repeat scroll center 0px;
+	background-size: 9px 51px;
+	height: 100px;
+	left: 91px;
+	top: 30px;
+	width: 9px;
+	z-index: 4;
+  }
+  
+  .hublot-timekeeper .hublot-handles div.hublot-seconds-chrono {
+	background: url(/images/hublot-timekeeper/seconds-chrono.png) no-repeat scroll center 0px;
+	background-size: 3px 10px;
+	height: 17px;
+	left: 74px;
+	top: 60px;
+	width: 3px;
+	z-index: 1;
+  }
+  
+  .hublot-timekeeper .logo-glass {
+	background: url(/images/hublot-timekeeper/logo-glass.png) no-repeat scroll center 0px;
+	background-size: cover;
+	height: 10px;
+	left: 87px;
+	top: 46px;
+	width: 18px;
+	z-index: 5;
+	position: absolute;
+  }
+  
+  /* IE9 */
+  .hublot-timekeeper .handles div.handle.hublot-hour {
+	-ms-transform: rotate(60deg);
+  }
+  .hublot-timekeeper .handles div.handle.hublot-minute {
+	-ms-transform: rotate(295deg);
+  }
+  

@@ -8,7 +8,7 @@ const websiteTitle = document.querySelector('title').innerText;
 const websiteText = document.querySelector('.main-news-title').innerText;
 const shareToFb = document.querySelectorAll('.share-to-Fb')
 const shareToTwitter = document.querySelectorAll('.share-to-Twitter')
-console.log(shareToTwitter)
+// console.log(shareToTwitter)
 // console.log(websiteUrl)
 // console.log(closeSideMenuBtn)
 // console.log(navBtn)
@@ -67,6 +67,6 @@ const shareData = {
  //making share to facebook and twitter buttons dynamic
  shareToTwitter.forEach(btn=>btn.href = `http://twitter.com/share?url=${websiteUrl}`)
  shareToFb.forEach(btn=>btn.href = `http://www.facebook.com/share.php?u=${websiteUrl}`)
- console.log(shareToTwitter);
+//  console.log(shareToTwitter);
   })
  
