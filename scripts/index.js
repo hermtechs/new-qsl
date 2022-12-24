@@ -47,15 +47,18 @@ const trendingNewsBigPostData = await client.getEntries({content_type:"mainConte
        .then(response=>{return response.items}) 
     
     // getting breaking news posts    
-const breakingNewsPosts = await client.getEntries({content_type:"sports2dayBreakingNews"})
+const generalNewsPostLinksData = await client.getEntries({content_type:"sports2dayBreakingNews"})
        .then(response=>{return response.items}) 
-
+      // getting more news posts
+const moreNewsPostsData = await client.getEntries({content_type:"sports2dayMoreNews"})
+.then(response=>{return response.items}) 
 
  //updating UI
 updateLandingPage(landingPageData); 
 updateTrendingNewsBigPost(trendingNewsBigPostData);
 updateTrendingSmallPosts(trendingNewsSmallPostData)
-updateGeneralNews(generalNewsPostsData,breakingNewsPosts);
+updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData);
+updateMoreNews(moreNewsPostsData);
 }
 
 getContentTypeData();
@@ -123,19 +126,80 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
    smallTrendingNewsContainer.innerHTML = trendingSmallPosts;
 }
 
-function updateGeneralNews(generalNewsPostsData,breakingNewsPosts){
-    // console.log(generalNewsPostsData);
-    // console.log(breakingNewsPosts)
-    // const {newsTitle,newsPostImage,newsCategory}=generalNewsPostsData.fields;
-    // console.log(newsTitle)
-    generalNewsPostsData.map(data=>{
-     console.log(data)       
-    const {newsTitle,newsPostImage,newsCategory}=data.fields;
-    //   console.log()  
+function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
+
+  const breakingNewsPosts = generalNewsPostLinksData.map(data=>{
+    const {newsTitle,dateOfPublication} = data.fields;
+    const date = dateOfPublication.slice(0, -12);
+    // removing hyphens from dates eg 2022-12-20 to 2022 12 20
+   const  reformattedDate = date.replace("-", " ").replace("-", " ") 
+    return `
+    <div class="breaking-news-post">
+    <a href="#">
+    <h4>${newsTitle}</h4>
+  </a>
+    <div class="time-stamp">
+      <span class="post-meta-data"></span>
+     <span><i class="fa-regular fa-clock"></i>
+     </span> 
+    </span> ${reformattedDate} </span> 
+    </div>
+  </div>  
+    `
+  }).join("")
+
+  const generalNews =  generalNewsPostsData.map(data=>{   
+    const {newsTitle,newsPostImage,newsCategory,publicationDate,photoDescription}=data.fields;
       const {file} = newsPostImage.fields;
       const imgUrl =  file.url.substring(2);
-      console.log(newsTitle);
-      console.log(newsCategory)
-    })
+      const date = publicationDate.slice(0, -12);
+      // removing hyphens from dates eg 2022-12-20 to 2022 12 20
+     const  reformattedDate = date.replace("-", " ").replace("-", " ") 
 
+      return `<article class="general-news-post">
+      <img src="https://${imgUrl}" alt="${photoDescription}" class="general-news-img">
+      <div class="txt">
+      <span class="news-category">${newsCategory}</span>
+      <a href="#"> <h3 class="news-title">${newsTitle}</h3> </a>
+      <div class="time-stamp">
+        <span class="post-meta-data"></span>
+       <span><i class="fa-regular fa-clock"></i>
+       </span> 
+      </span> ${reformattedDate} </span> 
+      </div>
+      </div>
+    </div>
+    </article>
+   `
+    }).join("")
+ //breakingNewsSection (one with only links -no images)
+const breakingNewsSection = document.querySelector('.breaking-news-section')
+const generalNewsSection = document.querySelector('.general-news')
+ breakingNewsSection.innerHTML = "<p class='section-heading'>Breaking News</p>" + breakingNewsPosts;
+// breakingNewsSection.innerHTML =  generalNews;
+const generalNewsElement = document.createElement('article');
+generalNewsElement.className = "breaking-news-section";
+generalNewsElement.innerHTML = generalNews;
+generalNewsSection.appendChild(generalNewsElement)
+
+// generalNewsSection.appendChild(generalNewsElement)
+}
+
+function updateMoreNews(moreNewsPostsData){
+  // console.log(moreNewsPostsData)
+ const moreNewsPosts = moreNewsPostsData.map(data=>{
+    const {newsTitle,newsImage, photoDescription} =data.fields;
+    const {file} = newsImage.fields;
+    const imgUrl =  file.url.substring(2);
+    return `
+    <a href="news-articles/transport-info.html" class="small-post">
+    <img src="http://${imgUrl}" alt="${photoDescription}">
+    <div class="description-txt">
+      <h3>${newsTitle}</h3>
+    </div>
+  </a>
+  `
+  }).join("");
+  const moreNewsPostsContainer = document.querySelector('.more-news-small-container');
+  moreNewsPostsContainer.innerHTML = moreNewsPosts;
 }
