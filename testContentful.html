@@ -82,5 +82,12 @@
 <body>
     
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
-    <script src="/contentful.js"></script>
+    <script>
+      var exports = {};
+    </script>
+    <script
+    src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+    charset="utf-8"
+  ></script>
+    <script src="contentful.js" type="module"></script>
 </body>

@@ -280,7 +280,7 @@ header{
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
     background-size:cover !important;
-    background-position: center  center !important;
+    background-position: center  center center !important;
     position: relative !important;
 }
 

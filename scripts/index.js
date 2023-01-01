@@ -24,7 +24,7 @@ logo.addEventListener('click', ()=>{
 
 //  Getting data from CMS and updating our UI with it
 
-const getContentTypeData = async (contentTypeId)=>{
+const getContentTypeData = async ()=>{
     const client = await contentful.createClient({
         space: "e267q19fd4xy",
         accessToken: "4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI"
@@ -53,12 +53,22 @@ const generalNewsPostLinksData = await client.getEntries({content_type:"sports2d
 const moreNewsPostsData = await client.getEntries({content_type:"sports2dayMoreNews"})
 .then(response=>{return response.items}) 
 
+//fetching main post data
+const mainPostData = await client.getEntries({content_type:"mainContentTrendingBigPost"})
+ //getting landingPageData   
+
+ const testData = await client.getEntries({content_type:"testBodyTxt"})
+    .then(response=>{return response.items})
+ 
  //updating UI
+//  createPost(mainPostData)
 updateLandingPage(landingPageData); 
 updateTrendingNewsBigPost(trendingNewsBigPostData);
 updateTrendingSmallPosts(trendingNewsSmallPostData)
 updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData);
 updateMoreNews(moreNewsPostsData);
+
+createLink(testData)
 }
 
 getContentTypeData();
@@ -155,6 +165,7 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
       const date = publicationDate.slice(0, -12);
       // removing hyphens from dates eg 2022-12-20 to 2022 12 20
      const  reformattedDate = date.replace("-", " ").replace("-", " ") 
+    //  console.log(data.sys.id)
 
       return `<article class="general-news-post">
       <img src="https://${imgUrl}" alt="${photoDescription}" class="general-news-img">
@@ -192,7 +203,7 @@ function updateMoreNews(moreNewsPostsData){
     const {file} = newsImage.fields;
     const imgUrl =  file.url.substring(2);
     return `
-    <a href="news-articles/transport-info.html" class="small-post">
+    <a href="/localhost:3000/testBodyTxt" class="small-post">
     <img src="http://${imgUrl}" alt="${photoDescription}">
     <div class="description-txt">
       <h3>${newsTitle}</h3>
@@ -202,4 +213,38 @@ function updateMoreNews(moreNewsPostsData){
   }).join("");
   const moreNewsPostsContainer = document.querySelector('.more-news-small-container');
   moreNewsPostsContainer.innerHTML = moreNewsPosts;
+}
+// function createPost(mainPostData){
+//   console.log(mainPostData)
+//   // console.log(mainPostData[0].sys.id)
+// }
+
+function createLink(testData){
+  // console.log(testData)
+  const contentTypeId = testData[0].sys.contentType.sys.id;
+  // console.log(contentTypeId);
+  const{mainContentIeHeadingsAndParagraphs}=testData[0].fields;
+  // console.log(mainContentIeHeadingsAndParagraphs)
+  const allContentFiels = mainContentIeHeadingsAndParagraphs.content;
+  console.log(allContentFiels)
+  // console.log(allContentFiels[0].nodeType)
+  // allContentFiels.find(fiels=>console.log(fiels.nodeType == "heading-1"))
+  const gotH1 = (fiels)=>{
+    return fiels.nodeType == "heading-1"
+  }
+  const x = allContentFiels.find(gotH1).content[0].value;
+  const html = `<h1>${x}</h1>`
+  console.log(html)
+  console.log(x)
+  // const gotP = allContentFiels.find((fiels)=>{fiels.nodeType == "paragraph"})
+  const checkP = (fiels)=>{
+    return fiels.nodeType == "paragraph"
+  }
+  const gotP = allContentFiels.find(checkP).content[0]
+  console.log(gotP)
+  joinContentWithTag(tag,content)
+}
+
+function joinContentWithTag(tag,content){
+  
 }
