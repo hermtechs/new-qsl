@@ -59,21 +59,17 @@ function getEntryIds(client){
   let routes = [...allIdsArray];
   routes.forEach(route => {
     app.get(`/${route}`, (req, res, next)=>{
-    //   res.send();
+    //   res.send(route);
+   client.getEntry(route).then(entry=>{
+   const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields; 
+    // const title = entry.fields.newsTitle;
+    res.send(`<h1>${newsTitle}</h1>`);
+    })
     });
-    generateArticleData(route,client);
+    return;
   })
 
 }
 
-function generateArticleData(route,client){
-    // console.log(route)
-  client.getEntry(route).then(entry=>{
-        //  console.log((entry.fields.newsTitle))
-        app.get(`/${route}`,(req,res)=>{
-            res.send(generatedData);
-        })
-    })
 
-}
 // generateArticleData();
