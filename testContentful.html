@@ -7,13 +7,23 @@
 
     <title>Troussier Says Qatar Can Go Far in World Cup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <!-- <link rel="stylesheet" href="/styles/article.css"> -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/article.css">
+    <!-- <link rel="stylesheet" href="/styles/main.css"> -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="/favicon_io/site.webmanifest">
-
+  <script
+  src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js"
+  charset="utf-8"
+></script>
+<script>
+  var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
+</script>
+<script
+src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+charset="utf-8"
+></script>
 </head>
 <body>
   <section class="header">
@@ -80,14 +90,12 @@
 </a>
 </header>
 <body>
+  <article class="content-body" id="rich-text-body">
     
-    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
-    <script>
-      var exports = {};
-    </script>
-    <script
-    src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
-    charset="utf-8"
-  ></script>
-    <script src="contentful.js" type="module"></script>
+  </article>
+
+
+  <script>
+ 
+</script>
 </body>

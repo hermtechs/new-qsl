@@ -3,7 +3,14 @@ const express = require('express');
 const app = express();
 const port = 2000;
 const myRoute = "abc";
-
+const allIdsArray = []
+// const routes = [
+//     "contact",
+//     "product",
+//     "product/demo-product", 
+//     "product/request-product"
+//   ]
+  
 app.listen(port, ()=>{
     console.log("app listening on " + port);
 })
@@ -15,19 +22,6 @@ function getRequestCallBack(req, res){
     res.send("greet Richard");
 }
 
-// const getAllEntriesFromCMS = async ()=>{
-//     const client = contentful.createClient({
-//         space: 'e267q19fd4xy',
-//         environment: 'master', // defaults to 'master' if not set
-//         accessToken: 'UI6DywLCj1HX2jXeB2as-yEg2SRNh-NBJjf0UuB9-cQ'
-//       })
-//         client.getEntries({content_type:"testBodyTxt"})
-// .then((entry) => console.log(entry))
-// .catch(console.error)
-// }
-
-// getAllEntriesFromCMS();
-
 const getContentTypeData = async ()=>{
     const client = await contentful.createClient({
         space: "e267q19fd4xy",
@@ -35,8 +29,51 @@ const getContentTypeData = async ()=>{
       });
 
  //getting richtext test data   
- const testData = await client.getEntries({content_type:"testBodyTxt"})
-    .then(response=>{return response.items})
-   console.log(testData)   
+ const testData = await client.getEntries()
+ .then((entries)=>{
+   const entryItems = entries.items;
+//   entryItems.forEach(item=>{
+//     console.log(item.fields.newsTitle)
+//   })
+entryItems.forEach(entry=>{
+    const eachEntryId = entry.sys.id;
+    // console.log(eachEntryId)
+    allIdsArray.push(eachEntryId)
+  })
+ })
+ 
+ getEntryIds(client);
 }
 getContentTypeData();
+
+function getEntryIds(client){
+
+// allIdsArray.forEach(id=>client.getEntry(id).then(entry=>{
+//     // console.log((entry.fields.newsTitle)
+//     console.log(id)
+//     const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields;
+//     // console.log(articleImage)
+//   }))
+
+
+  let routes = [...allIdsArray];
+  routes.forEach(route => {
+    app.get(`/${route}`, (req, res, next)=>{
+    //   res.send();
+    });
+    generateArticleData(route,client);
+  })
+
+}
+
+function generateArticleData(route,client){
+    // console.log(route)
+  client.getEntry(route).then(entry=>{
+        //  console.log((entry.fields.newsTitle))
+        app.get(`/${route}`,(req,res)=>{
+            res.send(generatedData);
+        })
+    })
+
+}
+// generateArticleData();

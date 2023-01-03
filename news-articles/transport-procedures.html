@@ -208,3 +208,26 @@
 
   <script src="/scripts/article.js"></script>
 </body>
+async  function getRichText(){
+  const client = await contentful.createClient({
+    space: 'e267q19fd4xy',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: '4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI',
+  });
+  // const testData = await client.getEntries({content_type:"testBodyTxt"})
+  //   .then(response=>{return response.items})
+  client
+        .getEntries({content_type:'testBodyTxt'})
+        .then((entry) => {
+          const rawRichTextField = entry.items[0].fields.mainContentIeHeadingsAndParagraphs;
+          // console.log(rawRichTextField);
+          return documentToHtmlString(rawRichTextField);
+        })
+        .then((renderedHtml) => {
+          // do something with html, like write to a file
+          console.log(renderedHtml);
+          document.getElementById('rich-text-body').innerHTML = renderedHtml;
+        })
+        .catch((error) => console.log(error));
+  }
+  getRichText();

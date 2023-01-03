@@ -67,25 +67,23 @@ updateTrendingNewsBigPost(trendingNewsBigPostData);
 updateTrendingSmallPosts(trendingNewsSmallPostData)
 updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData);
 updateMoreNews(moreNewsPostsData);
-
-createLink(testData)
 }
 
 getContentTypeData();
 
 function updateLandingPage(landingPageData){
-    // console.log(landingPageData);
-   const {topStoryHeading,topStoryImage,topStoryCategory}=landingPageData[0].fields;
+    const contentTypeId = landingPageData[0].sys.contentType.sys.id;
+   const {newsTitle,topStoryImage,topStoryCategory}=landingPageData[0].fields;
    
    //image
-   const{title, description, file} = topStoryImage.fields;
+   const{description, file} = topStoryImage.fields;
    const topStoryImgUrl =  file.url.substring(2)
    header.style.background = `url('https://${topStoryImgUrl}')`
    //heading
 //    console.log(topStoryCategory);
    //news category
    const storyOfTheDayCategory = document.querySelector('.story-category');
-   storyOfTheDayTitle.innerText = topStoryHeading; 
+   storyOfTheDayTitle.innerText = newsTitle; 
    storyOfTheDayCategory.innerText = topStoryCategory;
 }
 
@@ -93,7 +91,7 @@ function updateTrendingNewsBigPost(trendingNewsBigPostData){
     // console.log(trendingNewsBigPostData) 
     const lastAddedEntry = trendingNewsBigPostData[trendingNewsBigPostData.length-1];
     // console.log(lastAddedEntry);
-    const {image,title,shortDescription}=lastAddedEntry.fields;
+    const {image,newsTitle,shortDescription}=lastAddedEntry.fields;
 
     const{file} = image.fields;
     const imgUrl =  file.url.substring(2)
@@ -102,7 +100,7 @@ function updateTrendingNewsBigPost(trendingNewsBigPostData){
     const shortDescriptionElement = document.querySelector('.trending-short-description')
     const trendingNewsContainer = document.querySelector('.top-story-big');
 
-    trendingNewsBigPostTitle.innerText = title;
+    trendingNewsBigPostTitle.innerText = newsTitle;
     shortDescriptionElement.innerText = shortDescription;
     trendingNewsContainer.style.background = `url('https://${imgUrl}'),radial-gradient(#d6d6d6, #4e053e)`;
 }
@@ -110,7 +108,9 @@ function updateTrendingNewsBigPost(trendingNewsBigPostData){
 function updateTrendingSmallPosts(trendingNewsSmallPostData){
   const trendingSmallPosts = trendingNewsSmallPostData.map(data=>{
     // console.log(data)
-    const {articleTitle,articleImage,photoDescription,articleTime}=data.fields;
+    const contentTypeId = data.sys.contentType.sys.id;
+
+    const {newsTitle,articleImage,photoDescription,articleTime}=data.fields;
 
     const date = articleTime.slice(0, -12);
     // removing hyphens from dates eg 2022-12-20 to 2022 12 20
@@ -121,10 +121,10 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
     const imgUrl =  file.url.substring(2);
     // creating HTML for small posts under trending news
     return `
-    <a href="news-articles/latin-america-fans.html" class="small-post sharable-link">
+    <a href="${contentTypeId}" class="small-post sharable-link">
     <img src="https://${imgUrl}" alt="${photoDescription}">
     <div class="description-txt-small">
-      <p>${articleTitle}  </p>
+      <p>${newsTitle}  </p>
       <div class="time-stamp">
         <span class="post-meta-data"><i class="fa-regular fa-clock"></i> ${reformattedDate} </span> 
       </div>
@@ -218,33 +218,3 @@ function updateMoreNews(moreNewsPostsData){
 //   console.log(mainPostData)
 //   // console.log(mainPostData[0].sys.id)
 // }
-
-function createLink(testData){
-  // console.log(testData)
-  const contentTypeId = testData[0].sys.contentType.sys.id;
-  // console.log(contentTypeId);
-  const{mainContentIeHeadingsAndParagraphs}=testData[0].fields;
-  // console.log(mainContentIeHeadingsAndParagraphs)
-  const allContentFiels = mainContentIeHeadingsAndParagraphs.content;
-  console.log(allContentFiels)
-  // console.log(allContentFiels[0].nodeType)
-  // allContentFiels.find(fiels=>console.log(fiels.nodeType == "heading-1"))
-  const gotH1 = (fiels)=>{
-    return fiels.nodeType == "heading-1"
-  }
-  const x = allContentFiels.find(gotH1).content[0].value;
-  const html = `<h1>${x}</h1>`
-  console.log(html)
-  console.log(x)
-  // const gotP = allContentFiels.find((fiels)=>{fiels.nodeType == "paragraph"})
-  const checkP = (fiels)=>{
-    return fiels.nodeType == "paragraph"
-  }
-  const gotP = allContentFiels.find(checkP).content[0]
-  console.log(gotP)
-  joinContentWithTag(tag,content)
-}
-
-function joinContentWithTag(tag,content){
-  
-}
