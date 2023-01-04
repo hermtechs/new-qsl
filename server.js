@@ -1,26 +1,22 @@
 const contentful = require('contentful')
+
 const express = require('express');
+const ejs = require('ejs')
 const app = express();
+app.set('view engine', 'ejs')
+app.use('/public', express.static('public'));
+
 const port = 2000;
 const myRoute = "abc";
 const allIdsArray = []
-// const routes = [
-//     "contact",
-//     "product",
-//     "product/demo-product", 
-//     "product/request-product"
-//   ]
   
 app.listen(port, ()=>{
     console.log("app listening on " + port);
 })
 
-app.get(`/${myRoute}`,getRequestCallBack)
-
-// const id = "6bNUyWTODKBs1U6q6SZrog"
-function getRequestCallBack(req, res){ 
-    res.send("greet Richard");
-}
+app.get('/', (req,res)=>{
+  res.render('index');
+})
 
 const getContentTypeData = async ()=>{
     const client = await contentful.createClient({
@@ -48,28 +44,35 @@ getContentTypeData();
 
 function getEntryIds(client){
 
-// allIdsArray.forEach(id=>client.getEntry(id).then(entry=>{
-//     // console.log((entry.fields.newsTitle)
-//     console.log(id)
-//     const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields;
-//     // console.log(articleImage)
-//   }))
-
-
   let routes = [...allIdsArray];
   routes.forEach(route => {
     app.get(`/${route}`, (req, res, next)=>{
     //   res.send(route);
    client.getEntry(route).then(entry=>{
-   const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields; 
-    // const title = entry.fields.newsTitle;
-    res.send(`<h1>${newsTitle}</h1>`);
+   const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields;
+    // console.log(articleTime)
+    // console.log(entry.fields)
+    // get image data
+    const {file} = articleImage.fields;
+    const imgUrl =  file.url.substring(2);
+
+    const date = articleTime.slice(0, -12);
+    getRichText(entry);
+
+    // send data to frontend via view engine
+    res.render('article' ,{newsTitle,imgUrl, photoDescription, date})
+
+   //get Rich text (main body)
+    function getRichText(entry){
+      console.log(entry);
+      // const rawRichTextField = entry.items.fields.mainContent;
+      // console.log(rawRichTextField);
+    }
     })
     });
     return;
   })
 
+
 }
-
-
 // generateArticleData();
