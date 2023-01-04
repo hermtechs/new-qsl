@@ -30,7 +30,7 @@ charset="utf-8"
   <header>  
   <nav>
     <div class="nav-small-screen">
-    <a href="/index.html" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
+    <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
     <div class="humburger">   
      <span></span>
      <span></span>   
@@ -38,7 +38,7 @@ charset="utf-8"
     </div>
     </div>
     <div class="nav-big-screen">
-    <a href="/index.html" class="logo"> <img src="/public/icons/sports2daylogo-transparent.png" alt=""></a>
+    <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent.png" alt=""></a>
     <div class="links big-screen-links">
      <a href="#">Browse<i class="fa-solid fa-chevron-down"></i></a>  
      <a href="#">Qatar<i class="fa-solid fa-chevron-down"></i></a> 
@@ -59,7 +59,7 @@ charset="utf-8"
     <div class="small-screen-menu">
       <div class="small-screen-menu-header-container">
         <div class="small-screen-menu-header-wrapper">
-        <a href="/index.html" class="logo"><img src="/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
+        <adex.html" class="logo"><img src="/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
         <span class="close-menu"><i class="fa-solid fa-xmark"></i></span>
       </div>
       </div>
@@ -138,7 +138,7 @@ charset="utf-8"
 <footer>
     <div class="footer-wrapper">
       <h4 class="logo-footer">
-        <a href="/index.html" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""> </a>
+        <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""> </a>
       </h4>
     <div class="footer-links-wrapper">
     </div>
@@ -183,6 +183,11 @@ charset="utf-8"
 
   <script src="/public/scripts/article.js"></script>
   <script>
+    const pageUrl = window.location;
+    // this is the same as the endpoint of page url
+    const contentEntryId = pageUrl.pathname.substring(1);
+    // console.log(contentEntryId)
+
      async  function getRichText(){
   const client = await contentful.createClient({
     space: 'e267q19fd4xy',
@@ -192,15 +197,12 @@ charset="utf-8"
   // const testData = await client.getEntries({content_type:"testBodyTxt"})
   //   .then(response=>{return response.items})
   client
-        .getEntries({content_type:'testBodyTxt'})
+        .getEntry(contentEntryId)
         .then((entry) => {
-          const rawRichTextField = entry.items[0].fields.mainContentIeHeadingsAndParagraphs;
-          // console.log(rawRichTextField);
+          const rawRichTextField = entry.fields.mainContent;
           return documentToHtmlString(rawRichTextField);
         })
         .then((renderedHtml) => {
-          // do something with html, like write to a file
-          console.log(renderedHtml);
           document.getElementById('rich-text-body').innerHTML = renderedHtml;
         })
         .catch((error) => console.log(error));

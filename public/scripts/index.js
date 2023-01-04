@@ -72,21 +72,21 @@ getContentTypeData();
 
 function updateLandingPage(landingPageData){
     const entryId = landingPageData[0].sys.id
-   const {newsTitle,topStoryImage,topStoryCategory}=landingPageData[0].fields;
+   const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
    
    //image
-   const{description, file} = topStoryImage.fields;
+   const{description, file} = articleImage.fields;
    const topStoryImgUrl =  file.url.substring(2)
    header.style.background = `url('https://${topStoryImgUrl}')`
    //heading
-//    console.log(topStoryCategory);
+//    console.log(newsCategory);
    //news category
   const storyOfTheDayTitle = document.querySelector('.story-for-day-heading');
   const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
    const storyOfTheDayCategory = document.querySelector('.story-category');
    storyOfTheDayTitle.innerText = newsTitle; 
   //  storyOfTheDayTitle.href = entryId;
-   storyOfTheDayCategory.innerText = topStoryCategory;
+   storyOfTheDayCategory.innerText = newsCategory;
 }
 
 function updateTrendingNewsBigPost(trendingNewsBigPostData){
@@ -94,9 +94,9 @@ function updateTrendingNewsBigPost(trendingNewsBigPostData){
     const lastAddedEntry = trendingNewsBigPostData[trendingNewsBigPostData.length-1];
     // console.log(lastAddedEntry);
     const entryId =lastAddedEntry.sys.id;
-    const {image,newsTitle,shortDescription}=lastAddedEntry.fields;
+    const {articleImage,newsTitle,shortDescription}=lastAddedEntry.fields;
 
-    const{file} = image.fields;
+    const{file} = articleImage.fields;
     const imgUrl =  file.url.substring(2)
 
     const readMoreBtn = document.querySelector('.btn-read-more-trending');
@@ -145,8 +145,8 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
 
   const breakingNewsPosts = generalNewsPostLinksData.map(data=>{
     const entryId = data.sys.id;
-    const {newsTitle,dateOfPublication} = data.fields;
-    const date = dateOfPublication.slice(0, -12);
+    const {newsTitle,articleTime} = data.fields;
+    const date = articleTime.slice(0, -12);
     // removing hyphens from dates eg 2022-12-20 to 2022 12 20
    const  reformattedDate = date.replace("-", " ").replace("-", " ") 
     return `
@@ -166,10 +166,10 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
 
   const generalNews =  generalNewsPostsData.map(data=>{   
     const entryId =data.sys.id
-    const {newsTitle,newsPostImage,newsCategory,publicationDate,photoDescription}=data.fields;
-      const {file} = newsPostImage.fields;
+    const {newsTitle,articleImage,newsCategory,articleTime,photoDescription}=data.fields;
+      const {file} = articleImage.fields;
       const imgUrl =  file.url.substring(2);
-      const date = publicationDate.slice(0, -12);
+      const date = articleTime.slice(0, -12);
   
       // removing hyphens from dates eg 2022-12-20 to 2022 12 20
      const  reformattedDate = date.replace("-", " ").replace("-", " ") 
@@ -208,8 +208,8 @@ function updateMoreNews(moreNewsPostsData){
   // console.log(moreNewsPostsData)
  const moreNewsPosts = moreNewsPostsData.map(data=>{
     const entryId = data.sys.id;
-    const {newsTitle,newsImage, photoDescription} =data.fields;
-    const {file} = newsImage.fields;
+    const {newsTitle,articleImage, photoDescription} =data.fields;
+    const {file} = articleImage.fields;
     const imgUrl =  file.url.substring(2);
     return `
     <a href="${entryId}" class="small-post">

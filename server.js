@@ -55,19 +55,11 @@ function getEntryIds(client){
     // get image data
     const {file} = articleImage.fields;
     const imgUrl =  file.url.substring(2);
-
+  
     const date = articleTime.slice(0, -12);
-    getRichText(entry);
 
     // send data to frontend via view engine
-    res.render('article' ,{newsTitle,imgUrl, photoDescription, date})
-
-   //get Rich text (main body)
-    function getRichText(entry){
-      console.log(entry);
-      // const rawRichTextField = entry.items.fields.mainContent;
-      // console.log(rawRichTextField);
-    }
+    res.render('article' ,{newsTitle,imgUrl, photoDescription, date, route})
     })
     });
     return;
