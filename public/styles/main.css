@@ -74,7 +74,7 @@ nav{
   background: #660724;
   color:#fff;
   opacity: 0.98;
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   width: 100%;
@@ -223,9 +223,9 @@ margin-left: 0.5rem;
  .close-menu i{
     font-size: 1.25rem;
 }
-header{
+/* header{
     position: relative;
-}
+} */
 .header{
 background: #18011a; 
 padding: 0rem 0rem 2rem 0rem;
@@ -279,9 +279,11 @@ header{
     /* clip-path: circle(100.2% at 49% 0); */
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
-    background-size:cover !important;
+    background-size:contain !important;
     background-position: center  center center !important;
     position: relative !important;
+    left: 0;
+    right: 0;
 }
 
 .story-for-day-heading{
@@ -503,7 +505,12 @@ padding: 0rem 0rem 2rem 0rem;
     color: #a29b9b;
 }
 /* SECTION TOP STORIES */
-
+.news-category-section .time--stamp{
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
 .fa-clock{
     padding: 0.2rem;
 }
@@ -821,7 +828,11 @@ footer h6{
     }
 }
 @media(min-width:1000px){
-header{background-position: center center};
+header{
+    background-position: center center;
+    background-size:cover !important;
+};
+
 }
 @media (max-width:1000px){
 .top-story-container{
@@ -832,12 +843,6 @@ header{background-position: center center};
 }
 /* ====================== */
 /* JOSEPH CSS MEDIA QUERRY */
-.news-category-advert .big-screen-ad{
-    display: none;
-}
-.news-category-advert .small-screen-ad{
-    display: block;
-}
 .news-category-section{
     flex-wrap: wrap;
     margin: 10px;

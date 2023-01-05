@@ -49,17 +49,27 @@ function getEntryIds(client){
     app.get(`/${route}`, (req, res, next)=>{
     //   res.send(route);
    client.getEntry(route).then(entry=>{
-   const {newsTitle,articleImage,photoDescription,articleTime}=entry.fields;
-    // console.log(articleTime)
-    // console.log(entry.fields)
-    // get image data
-    const {file} = articleImage.fields;
-    const imgUrl =  file.url.substring(2);
-  
-    const date = articleTime.slice(0, -12);
+   const {newsTitle,articleImage,articleTime}=entry.fields;
+
+    if(articleImage !=undefined){
+    var {file} = articleImage.fields;
+    var imgUrl =  file.url.substring(2);
+    var{photoDescription}= entry.fields
+  }
+  else{
+    var imgUrl = "no-image-available"
+  }
+
+    if(articleTime != undefined){
+    var date = articleTime.slice(0, -12);
+    }
+    else{
+    var date = ""
+    }
 
     // send data to frontend via view engine
     res.render('article' ,{newsTitle,imgUrl, photoDescription, date, route})
+
     })
     });
     return;

@@ -111,8 +111,9 @@ charset="utf-8"
     </div>
 </section>
 <article class="content-body">
+    <% if(imgUrl != "no-image-available") {%>
     <img src="https://<%=imgUrl%>" alt=" <%=photoDescription%> " class="main-img">
-
+      <%}%>
  <div id="rich-text-body" class="content-body"> </div>   
 </article>
        
