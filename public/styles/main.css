@@ -548,9 +548,9 @@ padding: 0rem 0rem 2rem 0rem;
     padding: 0.5rem;
     border-bottom: 1px solid #d4c9c9;
 }
-.breaking-news-post:last-of-type{
+/* .breaking-news-post:last-of-type{
     border-bottom: none;
-}
+} */
 .breaking-news-post h4 {
     color: #555;
     font-weight: 600;

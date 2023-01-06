@@ -6,8 +6,8 @@ const app = express();
 app.set('view engine', 'ejs')
 app.use('/public', express.static('public'));
 
-const port = 2000;
-const myRoute = "abc";
+const port = process.env.PORT || 2000
+
 const allIdsArray = []
   
 app.listen(port, ()=>{
@@ -24,16 +24,12 @@ const getContentTypeData = async ()=>{
         accessToken: "4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI"
       });
 
- //getting richtext test data   
- const testData = await client.getEntries()
+ //getting all entries in our contentful CMS and then getting each entry ID
+ const allEntries = await client.getEntries()
  .then((entries)=>{
    const entryItems = entries.items;
-//   entryItems.forEach(item=>{
-//     console.log(item.fields.newsTitle)
-//   })
 entryItems.forEach(entry=>{
     const eachEntryId = entry.sys.id;
-    // console.log(eachEntryId)
     allIdsArray.push(eachEntryId)
   })
  })
