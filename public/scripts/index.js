@@ -51,13 +51,6 @@ const generalNewsPostLinksData = await client.getEntries({content_type:"sports2d
       // getting more news posts
 const moreNewsPostsData = await client.getEntries({content_type:"sports2dayMoreNews"})
 .then(response=>{return response.items}) 
-
-//fetching main post data
-const mainPostData = await client.getEntries({content_type:"mainContentTrendingBigPost"})
- //getting landingPageData   
-
- const testData = await client.getEntries({content_type:"testBodyTxt"})
-    .then(response=>{return response.items})
  
  //updating UI
 //  createPost(mainPostData)
@@ -91,7 +84,7 @@ function updateLandingPage(landingPageData){
 
 function updateTrendingNewsBigPost(trendingNewsBigPostData){
     // console.log(trendingNewsBigPostData) 
-    const lastAddedEntry = trendingNewsBigPostData[trendingNewsBigPostData.length-1];
+    const lastAddedEntry = trendingNewsBigPostData[0];
     // console.log(lastAddedEntry);
     const entryId =lastAddedEntry.sys.id;
     const {articleImage,newsTitle,shortDescription}=lastAddedEntry.fields;
@@ -127,7 +120,7 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
     // creating HTML for small posts under trending news
     return `
     <a href="${entryId}" class="small-post sharable-link">
-    <img src="https://${imgUrl}" alt="${photoDescription}">
+    <img src="https://${imgUrl}" alt="${photoDescription}" loading="lazy">
     <div class="description-txt-small">
       <p>${newsTitle}  </p>
       <div class="time-stamp">
@@ -176,7 +169,7 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
     //  console.log(data.sys.id)
 
       return `<article class="general-news-post">
-      <img src="https://${imgUrl}" alt="${photoDescription}" class="general-news-img">
+      <img src="https://${imgUrl}" alt="${photoDescription}" loading="lazy" class="general-news-img">
       <div class="txt">
       <div class="news-category">${newsCategory}</div>
       <a href="${entryId}"> <h3 class="news-title">${newsTitle}</h3> </a>
@@ -213,7 +206,7 @@ function updateMoreNews(moreNewsPostsData){
     const imgUrl =  file.url.substring(2);
     return `
     <a href="${entryId}" class="small-post">
-    <img src="http://${imgUrl}" alt="${photoDescription}">
+    <img src="http://${imgUrl}" loading="lazy" alt="${photoDescription}">
     <div class="description-txt">
       <h3>${newsTitle}</h3>
     </div>
