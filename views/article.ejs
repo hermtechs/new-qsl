@@ -40,12 +40,12 @@ charset="utf-8"
     <div class="nav-big-screen">
     <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent.png" alt=""></a>
     <div class="links big-screen-links">
-     <!-- <a href="#">Browse<i class="fa-solid fa-chevron-down"></i></a>   -->
-     <!-- <a href="#">Qatar<i class="fa-solid fa-chevron-down"></i></a>  -->
-     <!-- <a href="#">World Cup<i class="fa-solid fa-chevron-down"></i></a>  -->
-     <!-- <a href="#">International<i class="fa-solid fa-chevron-down"></i></a>  -->
-     <!-- <a href="#">Advertise</a>  -->
-     <!-- <a href="#">Get in touch</a>  -->
+     <a href="#">Browse<i class="fa-solid fa-chevron-down"></i></a>  
+     <a href="#">Qatar<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">World Cup<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">International<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">Advertise</a> 
+     <a href="#">Get in touch</a> 
      <!-- <a href="#">Login</a>  -->
     </div>
     <div class="social-media">
@@ -64,12 +64,12 @@ charset="utf-8"
       </div>
       </div>
       <div class="links small-screen-links">
-        <!-- <a href="#">Browse</a>  
+        <a href="#">Browse</a>  
         <a href="#">Qatar</a> 
         <a href="#">World Cup</a> 
         <a href="#">International</a> 
         <a href="#">Advertise</a> 
-        <a href="#">Get in touch</a>  -->
+        <a href="#">Get in touch</a> 
         <!-- <a href="#">Login</a>  -->
        </div>
 
@@ -200,8 +200,30 @@ charset="utf-8"
   client
         .getEntry(contentEntryId)
         .then((entry) => {
+          let options = {
+        renderNode: {
+          'embedded-asset-block': (node) =>
+            `<img src="${node.data.target.fields.file.url}" 
+            alt="${node.data.target.fields.description}" class="main-img"/>`
+          
+//            'embedded-entry-inline' : (node)=> `
+//            <article class="more-news-container">
+//     <div class="section-heading-wrapper section-heading-light">
+//      <h3 class="section-heading">RELATED CONTENT :</h3>
+//      </div>
+//    <section class="small-posts-container more-news-small-container">
+//     <a href="${node.data.fields.sys.id}" class="small-post">
+//     <div class="description-txt">
+  
+//     </div>
+//   </a>
+//    </section>
+//  </article>
+           
+        }
+      }
           const rawRichTextField = entry.fields.mainContent;
-          return documentToHtmlString(rawRichTextField);
+          return documentToHtmlString(rawRichTextField,options);
         })
         .then((renderedHtml) => {
           document.getElementById('rich-text-body').innerHTML = renderedHtml;
