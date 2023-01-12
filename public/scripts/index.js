@@ -2,7 +2,7 @@ const navBtn = document.querySelector('.humburger');
 const smallScreenMenu = document.querySelector('.small-screen-menu');
 const closeSideMenuBtn = document.querySelector('.close-menu');
 const logo = document.querySelector('.logo-side-bar') //applies only to homepage
-const header = document.querySelector('header');
+const storyOfDayElement = document.querySelector('.story-of-day');
 
 navBtn.addEventListener('click', ()=>{
         smallScreenMenu.style.transform = 'translateX(0%)'
@@ -68,18 +68,19 @@ function updateLandingPage(landingPageData){
    const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
    
    //image
-   const{description, file} = articleImage.fields;
+   const{photoDescription, file} = articleImage.fields;
    const topStoryImgUrl =  file.url.substring(2)
-   header.style.background = `url('https://${topStoryImgUrl}')`
-   //heading
-//    console.log(newsCategory);
-   //news category
-  const storyOfTheDayTitle = document.querySelector('.story-for-day-heading');
+   storyOfDayElement.style.background = `url('https://${topStoryImgUrl}'), #200518`
+
   const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
-   const storyOfTheDayCategory = document.querySelector('.story-category');
-   storyOfTheDayTitle.innerText = newsTitle; 
-  //  storyOfTheDayTitle.href = entryId;
-   storyOfTheDayCategory.innerText = newsCategory;
+
+   storyOfDayElement.innerHTML = ` <img src="https://${topStoryImgUrl}" alt="${photoDescription}" class="story-of-day-img">
+   <div class="story-of-day-txt">
+       <span class="category"> 
+           <p class="story-category">${newsCategory} <i class="fa-regular fa-circle-dot"></i> </p> 
+          </span>
+       <h2>${newsTitle}</h2>
+   </div>`
 }
 
 function updateTrendingNewsBigPost(trendingNewsBigPostData){

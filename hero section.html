@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <header>
+        <nav>
+    <div class="nav-small-screen">
+    <a href="#" class="logo"><img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""> </a>
+    <div class="humburger">   
+     <span></span>
+     <span></span>   
+     <span></span>   
+    </div>
+    </div>
+    <div class="nav-big-screen">
+    <a href="#" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""> </a>
+    <div class="links big-screen-links">
+     <a href="#">Browse<i class="fa-solid fa-chevron-down"></i></a>  
+     <a href="#">Qatar<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">World Cup<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">International<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">Advertise</a> 
+     <a href="#">Get in touch</a> 
+     <a href="#">Login</a> 
+    </div>
+    <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>  
+    </div>
+
+    <div class="small-screen-menu">
+      <div class="small-screen-menu-header-container">
+        <div class="small-screen-menu-header-wrapper">
+        <a href="#" class="logo logo-side-bar"><img src="/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
+        <span class="close-menu"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      </div>
+      <div class="links small-screen-links">
+        <a href="#">Browse</i></a>  
+        <a href="#">Qatar</i></a> 
+        <a href="#">World Cup</i></a> 
+        <a href="#">International</i></a> 
+        <a href="#">Advertise</a> 
+        <a href="#">Get in touch</a> 
+        <!-- <a href="#">Login</a>  -->
+       </div>
+
+       <div class="social-media-small-screens">
+        <p>Let's get social</p>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>  
+    </div>
+  </nav>
+
+<a href="#" class="story-of-day">
+<img src="./public/images/costa-rica/Costa Rica 2.jpg" alt="" class="story-of-day-img">
+<div class="story-of-day-txt">
+    <span class="category"> 
+        <p class="story-category">world cup <i class="fa-regular fa-circle-dot"></i> </p> 
+       </span>
+    <h2>Loeb Wins Dakar Ninth Stage, Sainz Suffers Crash</h2>
+</div>
+</a>
+  
+    </header>
+
+
+
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300&display=swap");
+
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+    /* font-family: "Avenir Next", "Avenir", "Avenir Next W01", system-ui, sans-serif; */
+}
+:root{
+    --clr-primary:#be1c4d;
+    --clr-primary1:#ec4a7b;
+    --clr-secondary:#8a1538;
+    --clr-background:#ff004c;
+    /* --clr-section-gradient:; */
+    --clr-accent:#fd6fff;
+}
+.story-of-day{
+    position: relative;
+    height: 80vh;
+    display: grid;
+    justify-content: center;
+     /* The image used */
+    /* background: #0b050c;  */
+    background: #200518;
+    background-image: url("./public/images/costa-rica/Costa\ Rica\ 2.jpg");
+    background-blend-mode:exclusion;
+    height: 100%;
+
+/* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.story-of-day-img{
+    object-fit: cover;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+}
+.story-of-day-txt{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.75); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #938e8e;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 95%;
+  max-width: 800px;
+  padding: 1rem;
+  letter-spacing: 1.5px;
+  /* text-align: center; */
+}
+.story-category{
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: #680a26;
+    font-weight: 900;
+    background: #fff !important;
+    padding: 0.3rem;
+    letter-spacing:3px;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+ nav{
+  padding: 0.4rem;
+  background: #660724;
+  color:#fff;
+  opacity: 0.98;
+  /* position: fixed; */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  position: sticky;
+}
+.logo img{
+    max-width: 120px;
+    max-height: 30px;
+    position: relative;
+    top: 0.15rem;
+}
+nav a{
+    color: #eee;
+    /* font-weight: 600; */
+    font-size: 1.2rem;
+}
+.nav-small-screen{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 1.5rem 0rem 1.5rem;
+}
+.humburger{
+    cursor: pointer;
+}
+.humburger span{
+    background: #fff;
+    width: 1.6rem;
+    height: 0.12rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}    
+.nav-big-screen{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.nav-big-screen .fa-chevron-down{
+    font-size: 0.6rem;
+}
+.big-screen-links a{
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    transition: 250ms ease-in-out;
+}
+.big-screen-links a:hover{
+ 
+}
+.big-screen-links>*{
+   margin-left: 1rem; 
+}
+.nav-big-screen .logo{
+    font-size: 1.2rem
+}
+.social-media>*{
+margin-left: 0.5rem;
+}
+.social-media{
+    background: #eee;
+    padding: 0.1rem;
+    border-radius: 0.1rem;
+}
+.social-media a i{
+    transition: 250ms ease-in;
+}
+.social-media a i:hover{
+    transform: scale(1.15);
+}
+.social-media a:nth-of-type(1){
+    color: #4267B2;
+    /* font-weight: 500; */
+}
+.social-media a:nth-of-type(2){
+  color:#1DA1F2;  
+}
+.social-media a:nth-of-type(3){
+    color: #efc689;
+}
+.social-media a:nth-of-type(4){
+   color: #FF0000; 
+}
+
+/* .big-screen-links:hover{
+
+} */
+.small-screen-menu{
+    /* background: #660724; */
+    /* display: none; */
+    transform: translateX(-100%);
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    background: #660724;  /*fallback bg color for old and unsupported browsers*/
+    background:linear-gradient(-120deg, #660724, #ba1d4c, #660724);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 200ms ease-in;
+}
+.small-screen-menu .small-screen-links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* align-items: center; */
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    max-height: 400px;
+    width: 100%;
+    margin-left: 2rem;
+}
+.small-screen-links a{
+    font-size: 1rem;
+}
+.social-media-small-screens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2rem;
+}
+.social-media-small-screens>*{
+    margin: 1.02rem;
+}
+.small-screen-menu-header-container{
+    border-bottom: 1px solid #9c8e8e;
+}
+.small-screen-menu-header-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 0.4rem;
+}
+.close-menu{
+    display: block;
+    cursor: pointer;
+}
+ .close-menu i{
+    font-size: 1.25rem;
+}
+
+header{
+    position: relative;
+}
+/*END OF NAV STYLES */
+
+@media (max-width:1050px){
+    .nav-big-screen{
+        display: none;
+    }
+    .nav-small-screen{
+        display: flex;
+    }
+    }
+    </style>
+</body>
+</html>
