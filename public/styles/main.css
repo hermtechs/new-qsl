@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: "Poppins", Arial, sans-serif;
 }
+    /*
+ * Variables
+ */
 :root{
     --clr-primary:#be1c4d;
     --clr-primary1:#ec4a7b;
@@ -12,6 +15,7 @@
     --clr-background:#ff004c;
     /* --clr-section-gradient:; */
     --clr-accent:#fd6fff;
+    --loading-grey: #ededed;
 }
 
 html{
@@ -20,6 +24,7 @@ html{
   img{
     max-width: 100%;
   }
+  
 /* h1,h2,h3,h4,h5,h6{
 
 } */
@@ -297,6 +302,50 @@ nav{
   header{
     position: relative;
   }
+
+/* skelton loader */
+.card {
+    position: absolute;
+    z-index: 2000;
+    width: 100%;
+    height:400px;
+    background-color: #050200;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .1);
+  }
+  .loading .skelton-image,
+  .loading .skelton-content,
+  .loading .description {
+    background-color: #6c6767;
+    background: linear-gradient(
+      100deg,
+      rgba(166, 163, 163, 0) 40%,
+      rgba(197, 193, 193, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    ) rgb(83, 74, 74);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    to {
+      background-position-x: -20%;
+    }
+  }
+  
+  .loading .skelton-content {
+    min-height: 50px;
+    animation-delay: .05s;
+    margin-bottom:1rem;
+
+  }
+  .loading .content{
+    position: relative;
+    /* bottom: -70%; */
+  }
+/* skelton loader */
+
 
 /*END OF NAV AND TOP SECTION including story-of-day ie land-page */
 

@@ -207,7 +207,7 @@ function updateMoreNews(moreNewsPostsData){
     const imgUrl =  file.url.substring(2);
     return `
     <a href="${entryId}" class="small-post">
-    <img src="http://${imgUrl}" loading="lazy" alt="${photoDescription}">
+    <img src="https://${imgUrl}" loading="lazy" alt="${photoDescription}">
     <div class="description-txt">
       <h3>${newsTitle}</h3>
     </div>
