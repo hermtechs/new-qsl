@@ -61,6 +61,23 @@ a{
     background-size: cover;
     width: 100%;
 }
+.story-of-day::after {
+    content: "" !important; 
+    z-index: -1 !important; /* Important */
+    position: inherit;
+    left: inherit;
+    top: inherit;
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+    background-size: cover;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);   
+}
 .story-of-day-img{
     object-fit: cover;
     position: relative;
@@ -69,10 +86,10 @@ a{
 }
 .story-of-day-txt{
     background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.75); /* Black w/opacity/see-through */
+  background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #938e8e;
+  border: 3px solid #dbd1d1;
   position: absolute;
   top: 80%;
   left: 50%;
@@ -309,14 +326,14 @@ nav{
     z-index: 2000;
     width: 100%;
     height:400px;
-    background-color: #050200;
+    background-color: #242423;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .1);
   }
   .loading .skelton-image,
   .loading .skelton-content,
   .loading .description {
-    background-color: #6c6767;
+    background-color: #7c7a7a;
     background: linear-gradient(
       100deg,
       rgba(166, 163, 163, 0) 40%,
@@ -342,7 +359,7 @@ nav{
   }
   .loading .content{
     position: relative;
-    /* bottom: -70%; */
+    top: 0.7rem;
   }
 /* skelton loader */
 
@@ -463,13 +480,13 @@ nav{
 .top-story-big{
     position: relative;
     width: 100%;
-    height:450px;
+    height:100%;
     background: #200518;
     background-blend-mode: multiply !important;
-    background-size: cover;
+    background-size:contain !important;
     background-repeat: no-repeat !important;
     /* background-attachment: fixed; */
-    background-position: center center !important;   
+    background-position: top !important;   
     color: #fff;
     padding: 7.5em 0.8em;
     /* border-radius: 0.5rem; */

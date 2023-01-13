@@ -1,7 +1,8 @@
 const contentful = require('contentful')
 
 const express = require('express');
-const ejs = require('ejs')
+const ejs = require('ejs');
+const { response } = require('express');
 const app = express();
 app.set('view engine', 'ejs')
 app.use('/public', express.static('public'));
@@ -14,10 +15,17 @@ app.listen(port, ()=>{
     console.log("app listening on " + port);
 })
 
+//rendering homepage
 app.get('/', (req,res)=>{
   res.render('index');
 })
 
+//rendering browse page
+app.get('/browse', (req,res)=>{
+  res.render('browse');
+})
+
+//initializing contentful
 const getContentTypeData = async ()=>{
     const client = await contentful.createClient({
         space: "e267q19fd4xy",
@@ -34,8 +42,12 @@ entryItems.forEach(entry=>{
   })
  })
  
+
  getEntryIds(client);
+ getAllArticles(client);
 }
+
+
 getContentTypeData();
 
 function getEntryIds(client){
@@ -70,7 +82,18 @@ function getEntryIds(client){
     });
     return;
   })
-
-
 }
-// generateArticleData();
+
+async function getAllArticles(client){
+ const allEntries = await client.getEntries()
+  .then(entry=>{
+    // console.log(entry.items);
+    const entryItems = entry.items;
+   const sampleTitle = entryItems.map(eachEntryItem=>{
+      return{
+        title:eachEntryItem.fields.newsTitle
+      }
+    })
+    console.log(sampleTitle[0].title);
+  })
+}

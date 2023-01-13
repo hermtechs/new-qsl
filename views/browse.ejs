@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/public/favicon_io/site.webmanifest">
+
+    <title>browse </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/public/styles/article.css">
+    <script
+  src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js"
+  charset="utf-8"
+></script>
+<script>
+  var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
+</script>
+<script
+src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+charset="utf-8"
+></script>
+</head>
+<body>
+  <section class="header">
+  <header>  
+  <nav>
+    <div class="nav-small-screen">
+    <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
+    <div class="humburger">   
+     <span></span>
+     <span></span>   
+     <span></span>   
+    </div>
+    </div>
+    <div class="nav-big-screen">
+    <a href="/" class="logo"> <img src="/public/icons/sports2daylogo-transparent.png" alt=""></a>
+    <div class="links big-screen-links">
+     <a href="#">Browse<i class="fa-solid fa-chevron-down"></i></a>  
+     <a href="#">Qatar<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">World Cup<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">International<i class="fa-solid fa-chevron-down"></i></a> 
+     <a href="#">Advertise</a> 
+     <a href="#">Get in touch</a> 
+     <!-- <a href="#">Login</a>  -->
+    </div>
+    <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="twitter.com/thesports2day"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>  
+    </div>
+
+    <div class="small-screen-menu">
+      <div class="small-screen-menu-header-container">
+        <div class="small-screen-menu-header-wrapper">
+        <adex.html" class="logo"><img src="/public/icons/sports2daylogo-transparent-cropped.png" alt=""></a>
+        <span class="close-menu"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      </div>
+      <div class="links small-screen-links">
+        <a href="#">Browse</a>  
+        <a href="#">Qatar</a> 
+        <a href="#">World Cup</a> 
+        <a href="#">International</a> 
+        <a href="#">Advertise</a> 
+        <a href="#">Get in touch</a> 
+        <!-- <a href="#">Login</a>  -->
+       </div>
+
+       <div class="social-media-small-screens">
+        <p>Let's get social</p>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>  
+
+    </div>
+  </nav>
+</header>
+</section>
+<main>
+    <article class="more-news-container">
+         <h3 class="section-heading">BROWSE ALL</h3>
+       <section class="small-posts-container more-news-small-container">
+     
+       </section>
+</main>
+
+
+<style>
+    /* SECTION-MORE-NEWS */
+.more-news-container{
+ margin: 0.5rem;
+ display: grid;   
+ /* grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) ); */
+}
+.small-posts-container{
+    display: grid;   
+    grid-template-columns: repeat( auto-fit, minmax(370px, 1fr) );
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+}
+.more-news-container .small-post{
+    display: flex;
+    gap: 1rem;
+    /* background: #eee; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    height: 95px;
+    max-width: 450px;
+    /* background: #f9f5f5; */
+}
+
+.more-news-container .small-post .description-txt{
+    max-width: 350px;
+}
+.more-news-container .small-post .description-txt{
+    color: #01010f;
+  
+}
+.more-news-container .small-post .description-txt p,.more-news-container .small-post .description-txt h3{
+    padding:0.1rem;
+    font-size:1rem;
+    /* font-weight: 300; */
+}
+.more-news-container .small-post .description-txt p{
+    font-size: 0.9rem;
+    color: #555;
+}
+.more-news-container .small-post .description-txt h3{
+    font-weight: 550;
+    color: #555;
+}
+.more-news-container .small-post img{
+height: 80px;
+max-width: 130px;
+width: 100%;
+object-fit: cover;
+border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+
+</style>
+</body>
