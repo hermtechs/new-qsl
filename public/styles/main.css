@@ -35,6 +35,10 @@ a{
 /* body{
     background: #8a1538;
 } */
+.flex-space-btwn{
+    display: flex;
+    align-items: center;
+}
 .btn-share-post{
     margin-left: 2rem;
     cursor: pointer;
@@ -54,10 +58,7 @@ a{
     background: #200518 ;
     background-blend-mode:exclusion !important;
     height: 100%;
-
-/* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
 }
@@ -325,7 +326,8 @@ nav{
     position: absolute;
     z-index: 2000;
     width: 100%;
-    height:400px;
+    /* height:00px; */
+    /* height: 100%; */
     background-color: #242423;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, .1);
@@ -337,12 +339,12 @@ nav{
     background: linear-gradient(
       100deg,
       rgba(166, 163, 163, 0) 40%,
-      rgba(197, 193, 193, 0.5) 50%,
+      rgba(163, 161, 161, 0.5) 50%,
       rgba(255, 255, 255, 0) 60%
     ) rgb(83, 74, 74);
     background-size: 200% 100%;
     background-position-x: 180%;
-    animation: 1s loading ease-in-out infinite;
+    animation: 1.5s loading ease-in-out infinite;
   }
   
   @keyframes loading {
@@ -475,30 +477,42 @@ nav{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
 }
 /* TOP STORY POST ie TRENDING */
 .top-story-big{
     position: relative;
     width: 100%;
     height:100%;
-    background: #200518;
+    background: #1a191a;
     background-blend-mode: multiply !important;
     background-size:contain !important;
     background-repeat: no-repeat !important;
     /* background-attachment: fixed; */
     background-position: top !important;   
     color: #fff;
-    padding: 7.5em 0.8em;
+    /* padding: 7.5em 0.8em; */
     /* border-radius: 0.5rem; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  }
-/*END  OF TOP STORY POST */
-
-.bigger-post-description{
     max-width: 600px;
+  }
+  .main-story-img{
+    max-height: 380px;
+    width: 100%;
+  }
+  .bigger-post-description-txt{
+    max-width: 500px;
+    position: relative;
+    /* top: -2rem; */
+    /* background: rgba(0, 0, 0, 0.4); */
+    padding: 1rem;
 }
   .top-story-big h2{
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
   }
   .top-story-big p{
     /* background: #0202cf; */
@@ -506,31 +520,44 @@ nav{
     padding-bottom: 0.5rem;
     line-height:2;
     font-weight: 600;
+    color: #fff;
   }
+/*END  OF TOP STORY BIG POST */
+
   .small-posts{
     /* height: 450px; */
-    background: #18011a;
+    max-width: 600px;
+    height: 100%;
     padding: 0.3rem;
     /* border-radius: 0.5rem; */
+    background: #1a191a;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
   .small-posts .small-post{
     display: flex;
-    margin: 1rem 0.1rem 1.5rem 0.1rem;
+    margin: 1rem 0.2rem 1.5rem 0.2rem;
     gap:1rem;
-    height: 95px;
+    height: 110px;
     max-height: 150px;
     padding: 0rem 0.2rem;
     font-weight: 400;
+    background: #1a191a;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
   }
   .small-posts .small-post img{
-    height: 100%;
+    height: 100px;
     /* width: 100%; */
-    border-radius: 0.15rem;
+    width: 180px !important;
+    border-radius: 0rem;
+    margin: 0.2rem 0.1rem;
   }
   .small-posts .small-post{
     color: #eee;
+    letter-spacing: 0.8px;
+    border-bottom: 4px solid #18011a;
   }
+
   /* .description-txt{
   text-align: center;
   padding: 0.1rem 1rem;
@@ -541,11 +568,9 @@ nav{
   padding: 0.2rem;
 }
 .btn-primary{
-  border: 2px solid #ffff;
+  border: 1px solid rgb(138, 130, 130);
   padding: 0.2rem 0.6rem;
-  border-radius: 1.2rem;
-  color: #fff;
-
+  color: #ded8d8;
 }
 .read-more-btn{
   display: inline-block;
@@ -561,6 +586,9 @@ nav{
 .read-more-btn:hover{
   opacity: 0.8;
   transform: scale(1.05);
+}
+.top-story-big .time-stamp{
+    margin-left: 2rem;
 }
 .description-txt-small p{
     margin-bottom: 0.5rem;
@@ -636,6 +664,7 @@ nav{
     background: #1b011e;
     margin-bottom: 1rem;
     border-radius: 0.2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .general-news-post  .news-title{
     color: #ffff;
@@ -644,6 +673,16 @@ nav{
 }
 .general-news-post .txt{
     padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+}
+.news-category{
+    color: #c4c2c2;
+    border: 1px solid #b4aeae;
+    width: 100px;
+    text-align: center;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 /* SECTION GENERAL NEWS END */
 
@@ -659,6 +698,7 @@ nav{
     gap: 1rem;
     justify-content: center;
     justify-items: center;
+    align-content: center;
 }
 .more-news-container .small-post{
     display: flex;
