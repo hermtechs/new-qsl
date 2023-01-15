@@ -121,7 +121,9 @@ function updateTrendingNewsBigPost(trendingNewsSmallPostData){
 
 function updateTrendingSmallPosts(trendingNewsSmallPostData){
 
+  trendingNewsSmallPostData.length = 4; //limiting how many posts get displayed on the home page
   const trendingSmallPosts = trendingNewsSmallPostData.map(data=>{
+  
 
     const entryId = data.sys.id;
 
@@ -163,6 +165,8 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
 }
 
 function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
+  generalNewsPostsData.length = 8; 
+  generalNewsPostLinksData.length = 3; //limiting how many display on homepage
 
   const breakingNewsPosts = generalNewsPostLinksData.map(data=>{
     const entryId = data.sys.id;
@@ -248,7 +252,7 @@ generalNewsSection.appendChild(generalNewsElement)
 }
 
 function updateMoreNews(moreNewsPostsData){
-  // console.log(moreNewsPostsData)
+  moreNewsPostsData.length = 6; //limiting how many get displayed on home page
  const moreNewsPosts = moreNewsPostsData.map(data=>{
     const entryId = data.sys.id;
     const {newsTitle,articleImage, photoDescription, articleTime} =data.fields;
