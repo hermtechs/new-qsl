@@ -1,4 +1,6 @@
 const contentful = require('contentful')
+const ColorThief = require('colorthief');
+// console.log(ColorThief);
 
 const express = require('express');
 const ejs = require('ejs');
@@ -15,15 +17,53 @@ app.listen(port, ()=>{
     console.log("app listening on " + port);
 })
 
-//rendering homepage
+//rendering homepage 
 app.get('/', (req,res)=>{
-  res.render('index');
+
+  //RENDER LANDING PAGE(HERO SECTION) DATA FROM THE SERVER
+  
+  async function getLandingPageData(){
+
+    const client = await contentful.createClient({
+      space: "e267q19fd4xy",
+      accessToken: "4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI"
+    });
+
+    const landingPageData = await client.getEntries({content_type:'sports2dayLandingPage'})
+    .then(entries=>{
+     const lastAddedEntry =entries.items[0];
+    //  console.log(lastAddedEntry) 
+    const{articleImage,newsTitle,photoDescription,newsCategory}=lastAddedEntry.fields
+    const entryId = lastAddedEntry.sys.id;
+
+    if(articleImage !=undefined){
+      var {file} = articleImage.fields;
+      var imgUrl =  file.url.substring(2);
+    }
+    else{
+      var imgUrl = "no-image-available"
+    }
+
+    //getting image colors with colorThief
+   ColorThief.getColor(`https://${imgUrl}`,[, 10])
+        .then(color => {  
+          var dominantImgColor = `rgb(${color.toString()})`;
+  res.render('index',{imgUrl,newsTitle,photoDescription,newsCategory,entryId, dominantImgColor})
+
+      })
+        .catch(err => { console.log(err) })
+        
+    })
+  }
+  getLandingPageData()
+
 })
 
 //rendering browse page
 app.get('/browse', (req,res)=>{
   res.render('browse');
 })
+
 
 //initializing contentful
 const getContentTypeData = async ()=>{
@@ -77,7 +117,6 @@ function getEntryIds(client){
 
     // send data to frontend via view engine
     res.render('article' ,{newsTitle,imgUrl, photoDescription, date, route})
-
     })
     });
     return;
@@ -94,6 +133,7 @@ async function getAllArticles(client){
         title:eachEntryItem.fields.newsTitle
       }
     })
-    console.log(sampleTitle[0].title);
+    // console.log(sampleTitle[0].title);
   })
 }
+

@@ -30,8 +30,8 @@ const getContentTypeData = async ()=>{
       });
 
  //getting landingPageData   
- const landingPageData = await client.getEntries({content_type:"sports2dayLandingPage"})
-    .then(response=>{return response.items})
+//  const landingPageData = await client.getEntries({content_type:"sports2dayLandingPage"})
+//     .then(response=>{return response.items})
 
 // getting trending news (Big Post) data   
 // const trendingNewsBigPostData = await client.getEntries({content_type:"mainContentTrendingBigPost"})
@@ -54,7 +54,7 @@ const moreNewsPostsData = await client.getEntries({content_type:"sports2dayMoreN
  
  //updating UI
 //  createPost(mainPostData)
-updateLandingPage(landingPageData); 
+// updateLandingPage(landingPageData); 
 updateTrendingSmallPosts(trendingNewsSmallPostData)
 updateTrendingNewsBigPost(trendingNewsSmallPostData);
 updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData);
@@ -63,26 +63,26 @@ updateMoreNews(moreNewsPostsData);
 
 getContentTypeData();
 
-function updateLandingPage(landingPageData){
-    const entryId = landingPageData[0].sys.id
-   const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
+// function updateLandingPage(landingPageData){
+//     const entryId = landingPageData[0].sys.id
+//    const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
    
-   //image
-   const{photoDescription, file} = articleImage.fields;
-   const topStoryImgUrl =  file.url.substring(2)
-   storyOfDayElement.style.background = `url('https://${topStoryImgUrl}'), #200518`
+//    //image
+//    const{photoDescription, file} = articleImage.fields;
+//    const topStoryImgUrl =  file.url.substring(2)
+//    storyOfDayElement.style.background = `url('https://${topStoryImgUrl}'), #200518`
 
-  const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
+//   const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
 
-   storyOfDayElement.innerHTML = ` 
-   <img src="https://${topStoryImgUrl}" alt="${photoDescription}" class="story-of-day-img">
-   <div class="story-of-day-txt">
-       <span class="category"> 
-           <p class="story-category">${newsCategory} <i class="fa-regular fa-circle-dot"></i> </p> 
-          </span>
-       <h2>${newsTitle}</h2>
-   </div>`
-}
+//    storyOfDayElement.innerHTML = ` 
+//    <img src="https://${topStoryImgUrl}" alt="${photoDescription}" class="story-of-day-img">
+//    <div class="story-of-day-txt">
+//        <span class="category"> 
+//            <p class="story-category">${newsCategory} <i class="fa-regular fa-circle-dot"></i> </p> 
+//           </span>
+//        <h2>${newsTitle}</h2>
+//    </div>`
+// }
 
 //this is always element 0 of small posts data
 function updateTrendingNewsBigPost(trendingNewsSmallPostData){
@@ -121,7 +121,7 @@ function updateTrendingNewsBigPost(trendingNewsSmallPostData){
 
 function updateTrendingSmallPosts(trendingNewsSmallPostData){
 
-  trendingNewsSmallPostData.length = 4; //limiting how many posts get displayed on the home page
+  trendingNewsSmallPostData.length = 5; //limiting how many posts get displayed on the home page
   const trendingSmallPosts = trendingNewsSmallPostData.map(data=>{
   
 
@@ -161,7 +161,7 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
    trendingSmallPosts.shift();
   //  console.log(updatedInnerHTML);=
    const smallTrendingNewsContainer = document.querySelector('.small-posts')
-   smallTrendingNewsContainer.innerHTML = trendingSmallPosts;
+   smallTrendingNewsContainer.innerHTML = trendingSmallPosts.join("");;
 }
 
 function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){

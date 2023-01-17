@@ -73,9 +73,9 @@
       </div>
     </nav>
 
-<a href="#" class="story-of-day">  
+<a href="<%=entryId%>" class="story-of-day" id="<%=dominantImgColor%>"> 
     <!-- loader -->
-    <div class="card loading">
+    <!-- <div class="card loading">
       <div class="skelton-image">
         
       </div>
@@ -86,8 +86,15 @@
           
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- loader -->
+     <img src="https://<%=imgUrl%>" alt="<%=photoDescription%>" class="story-of-day-img">
+    <div class="story-of-day-txt">
+        <span class="category"> 
+            <p class="story-category"> <%=newsCategory%> <i class="fa-regular fa-circle-dot"></i> </p> 
+           </span>
+        <h2><%=newsTitle%></h2>
+    </div>
 </a>
 
 </header>
@@ -200,6 +207,11 @@
 <p>&copy 2023 Sports 2day</p>
 </div>
 </footer>
+<script>
+  const heroSection = document.querySelector('.story-of-day');
+   //id is same as dominantHeroImgBgColor inserted by ejs engine
+  heroSection.style.background = heroSection.id;
+</script>
 <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 <script src="/public/scripts/index.js"></script>
 </body>
