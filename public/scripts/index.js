@@ -29,9 +29,9 @@ const getContentTypeData = async ()=>{
         accessToken: "4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI"
       });
 
- //getting landingPageData   
-//  const landingPageData = await client.getEntries({content_type:"sports2dayLandingPage"})
-//     .then(response=>{return response.items})
+//  getting landingPageData   
+ const landingPageData = await client.getEntries({content_type:"sports2dayLandingPage"})
+    .then(response=>{return response.items})
 
 // getting trending news (Big Post) data   
 // const trendingNewsBigPostData = await client.getEntries({content_type:"mainContentTrendingBigPost"})
@@ -57,32 +57,32 @@ const moreNewsPostsData = await client.getEntries({content_type:"sports2dayMoreN
 // updateLandingPage(landingPageData); 
 updateTrendingSmallPosts(trendingNewsSmallPostData)
 updateTrendingNewsBigPost(trendingNewsSmallPostData);
-updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData);
+updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData, landingPageData);
 updateMoreNews(moreNewsPostsData);
 }
 
 getContentTypeData();
 
-// function updateLandingPage(landingPageData){
-//     const entryId = landingPageData[0].sys.id
-//    const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
+function updateLandingPage(landingPageData){
+    const entryId = landingPageData[0].sys.id
+   const {newsTitle,articleImage,newsCategory}=landingPageData[0].fields;
    
-//    //image
-//    const{photoDescription, file} = articleImage.fields;
-//    const topStoryImgUrl =  file.url.substring(2)
-//    storyOfDayElement.style.background = `url('https://${topStoryImgUrl}'), #200518`
+   //image
+   const{photoDescription, file} = articleImage.fields;
+   const topStoryImgUrl =  file.url.substring(2)
+   storyOfDayElement.style.background = `url('https://${topStoryImgUrl}'), #200518`
 
-//   const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
+  const storyOfDayLinkl =document.querySelector('.story-of-day').href = entryId
 
-//    storyOfDayElement.innerHTML = ` 
-//    <img src="https://${topStoryImgUrl}" alt="${photoDescription}" class="story-of-day-img">
-//    <div class="story-of-day-txt">
-//        <span class="category"> 
-//            <p class="story-category">${newsCategory} <i class="fa-regular fa-circle-dot"></i> </p> 
-//           </span>
-//        <h2>${newsTitle}</h2>
-//    </div>`
-// }
+   storyOfDayElement.innerHTML = ` 
+   <img src="https://${topStoryImgUrl}" alt="${photoDescription}" class="story-of-day-img">
+   <div class="story-of-day-txt">
+       <span class="category"> 
+           <p class="story-category">${newsCategory} <i class="fa-regular fa-circle-dot"></i> </p> 
+          </span>
+       <h2>${newsTitle}</h2>
+   </div>`
+}
 
 //this is always element 0 of small posts data
 function updateTrendingNewsBigPost(trendingNewsSmallPostData){
@@ -98,7 +98,7 @@ function updateTrendingNewsBigPost(trendingNewsSmallPostData){
     //checking if time is set by content creator or not
     const defaultTime = lastAddedEntry.sys.createdAt; //set by contentful
     if(articleTime==undefined){
-      const date = defaultTime.slice(0, -12);
+      const date = defaultTime.slice(0, -14);
     // removing hyphens from dates eg 2022-12-20 to 2022 12 20
      var  reformattedDate = date.replace("-", " ").replace("-", " ")
     }
@@ -132,13 +132,13 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
     //checking if time is set by content creator or not
     const defaultTime = data.sys.createdAt; //set by contentful
     if(articleTime==undefined){
-      const date = defaultTime.slice(0, -12);
+      var date = defaultTime.slice(0, -14);
     // removing hyphens from dates eg 2022-12-20 to 2022 12 20
-     var  reformattedDate = date.replace("-", " ").replace("-", " ")
+    //  var  reformattedDate = date.replace("-", " ").replace("-", " ")
     }
     else{
-      const date = articleTime.slice(0, -12);
-     var  reformattedDate = date.replace("-", " ").replace("-", " ")
+      var date = articleTime.slice(0, -12);
+    //  var  reformattedDate = date.replace("-", " ").replace("-", " ")
     }
     
    //getting image urls
@@ -151,7 +151,7 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
     <div class="description-txt-small">
       <p>${newsTitle}  </p>
       <div class="time-stamp">
-        <span class="post-meta-data"><i class="fa-regular fa-clock"></i> ${reformattedDate} </span> 
+        <span class="post-meta-data"><i class="fa-regular fa-clock"></i> ${date} </span> 
       </div>
     </div>
    </a> `
@@ -164,9 +164,9 @@ function updateTrendingSmallPosts(trendingNewsSmallPostData){
    smallTrendingNewsContainer.innerHTML = trendingSmallPosts.join("");;
 }
 
-function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
+function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData,landingPageData){
   generalNewsPostsData.length = 8; 
-  generalNewsPostLinksData.length = 3; //limiting how many display on homepage
+  // generalNewsPostLinksData.length = 3; //limiting how many display on homepage
 
   const breakingNewsPosts = generalNewsPostLinksData.map(data=>{
     const entryId = data.sys.id;
@@ -175,7 +175,7 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
     //checking if time is set by content creator or not
     const defaultTime = data.sys.createdAt; //set by contentful
     if(articleTime==undefined){
-      const date = defaultTime.slice(0, -12);
+      const date = defaultTime.slice(0, -14);
     // removing hyphens from dates eg 2022-12-20 to 2022 12 20
      var  reformattedDate = date.replace("-", " ").replace("-", " ")
     }
@@ -209,7 +209,7 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
     //checking if time is set by content creator or not
       const defaultTime = data.sys.createdAt; //set by contentful
       if(articleTime==undefined){
-        const date = defaultTime.slice(0, -12);
+        const date = defaultTime.slice(0, -14);
       // removing hyphens from dates eg 2022-12-20 to 2022 12 20
        var  reformattedDate = date.replace("-", " ").replace("-", " ")
       }
@@ -238,6 +238,48 @@ function updateGeneralNews(generalNewsPostsData,generalNewsPostLinksData){
     </article>
    `
     }).join("")
+
+ //remove first element of landing page posts array
+landingPageData.shift();
+const fileteredLandingPosts = landingPageData.map(data=>{
+  // console.log(data);
+  const{newsTitle,articleImage,photoDescription, articleTime, newsCategory}=data.fields;
+  const entryId = data.sys.id;
+  const {file} = articleImage.fields;
+  const imgUrl =  file.url.substring(2);
+      //checking if time is set by content creator or not
+      const defaultTime = data.sys.createdAt; //set by contentful
+      if(articleTime==undefined){
+        const date = defaultTime.slice(0, -14);
+      // removing hyphens from dates eg 2022-12-20 to 2022 12 20
+       var  reformattedDate = date.replace("-", " ").replace("-", " ")
+      }
+      else{
+        const date = articleTime.slice(0, -12);
+       var  reformattedDate = date.replace("-", " ").replace("-", " ")
+      }
+
+   return `<article class="general-news-post">
+   <a href="${entryId}">
+   <img src="https://${imgUrl}" alt="${photoDescription}" loading="lazy" class="general-news-img">
+   <div class="txt">
+
+   <div class="news-category">${newsCategory}</div>
+
+    <h3 class="news-title">${newsTitle}</h3>
+   <div class="time-stamp">
+     <span class="post-meta-data"></span>
+    <span><i class="fa-regular fa-clock"></i>
+    </span> 
+   </span> ${reformattedDate} </span> 
+   </div>
+   </div>
+ </div>
+ </a>
+ </article>`
+}).join("");
+
+ 
  //breakingNewsSection (one with only links -no images)
 const breakingNewsSection = document.querySelector('.breaking-news-section')
 const generalNewsSection = document.querySelector('.general-news')
@@ -245,10 +287,9 @@ const generalNewsSection = document.querySelector('.general-news')
 // breakingNewsSection.innerHTML =  generalNews;
 const generalNewsElement = document.createElement('article');
 generalNewsElement.className = "breaking-news-section";
-generalNewsElement.innerHTML = generalNews;
+generalNewsElement.innerHTML = generalNews + fileteredLandingPosts ;
 generalNewsSection.appendChild(generalNewsElement)
 
-// generalNewsSection.appendChild(generalNewsElement)
 }
 
 function updateMoreNews(moreNewsPostsData){

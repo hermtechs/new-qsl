@@ -108,11 +108,14 @@ function getEntryIds(client){
     var imgUrl = "no-image-available"
   }
 
-    if(articleTime != undefined){
-    var date = articleTime.slice(0, -12);
+  const defaultTime = entry.sys.createdAt; //set by contentful
+
+  // checking if content creator entered date and time
+    if(articleTime == undefined){
+    var date = defaultTime.slice(0, -14);
     }
     else{
-    var date = ""
+      var date = articleTime.slice(0, -12);
     }
 
     // send data to frontend via view engine
