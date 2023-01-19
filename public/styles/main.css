@@ -306,8 +306,7 @@ nav{
       color: #660724 !important;
       padding: 0.3rem 1.4rem;  
       /* background: #b00d67   ; */
-      text-transform: capitalize
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+      text-transform: capitalize                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
   }
   .btn-see-more:hover{
       transform: scale(1.05);
@@ -553,10 +552,14 @@ nav{
     letter-spacing: 0.8px;
     position: relative;
     overflow: hidden;
+    transition: 200ms ease-in;
   }
   .small-post p{
     position: relative;
     top: 1rem;
+  }
+  .small-posts .small-post:hover{
+    transform: scale(0.99);
   }
   .small-posts .description-txt-small::before{
     content: "";

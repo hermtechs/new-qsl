@@ -59,12 +59,6 @@ app.get('/', (req,res)=>{
 
 })
 
-//rendering browse page
-app.get('/browse', (req,res)=>{
-  res.render('browse');
-})
-
-
 //initializing contentful
 const getContentTypeData = async ()=>{
     const client = await contentful.createClient({
@@ -140,3 +134,30 @@ async function getAllArticles(client){
   })
 }
 
+//rendering browse page
+app.get('/browse', (req,res)=>{
+
+  res.render('browse');
+
+})
+
+async function getCategory(){
+  const client = await contentful.createClient({
+    space: "e267q19fd4xy",
+    accessToken: "4eFLDDjjLb4BZr_S9mrpPngIABB40pC9OFgkYiVFKzI"
+  });
+const allEntries = await client.getEntries()
+.then(entry=>{
+  const entryItems = entry.items
+  // const {newsCategory}=entryItems[0].fields
+  // const newsCategory = entryItems.fields.newsCategory;
+  // console.log(entryItemsFields);
+//   const footballNews = entryItems.find(entryItems.fields.newsCategory=="football");
+//   console.log(footballNews);
+//  console.log(newsCategory);
+const testIt = entryItems.find(element=>element.fields.newsCategory=="tennis");
+console.log(testIt);
+})
+
+}
+getCategory()
